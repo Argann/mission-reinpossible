@@ -16,6 +16,7 @@ public class TempoManager : MonoBehaviour
     /// <summary>
     /// Evenement appelé à chaque battement de jeu
     /// </summary>
+    [HideInInspector]
     public UnityEvent tempoEvent;
 
     /// <summary>
