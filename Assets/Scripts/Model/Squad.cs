@@ -11,4 +11,5 @@ public class Squad : GameEntity
     /// La liste des unités comprises dans l'escouade
     /// </summary>
     public List<Unit> units;
+
 }

@@ -10,17 +10,70 @@ public class Unit
     /// <summary>
     /// Nombre de points de vie des unités
     /// </summary>
-    public int hp;
+    private int hp;
+
+    /// <summary>
+    /// Propriété permettant d'accéder aux points de vie de l'unité
+    /// </summary>
+    /// <value></value>
+    public int HP {
+        get => hp;
+
+        set {
+            int oldHP = hp;
+            hp = value;
+
+            if (oldHP < hp)
+            {
+                EventManager.OnUnitHeal.Invoke(new GameEventPayload()
+                {
+                    {"Unit", this},
+                    {"HealAmount", hp - oldHP}
+                });
+            }
+            else if (oldHP > hp)
+            {
+                EventManager.OnUnitHit.Invoke(new GameEventPayload()
+                {
+                    {"Unit", this},
+                    {"HitAmount", oldHP - hp}
+                });
+            }
+        }
+    }
 
     /// <summary>
     /// La position des unités en x et y
     /// </summary>
-    public Vector2 position;
+    private Vector2 position;
+
+    /// <summary>
+    /// Accesseur de la position de l'unité
+    /// </summary>
+    public Vector2 Position 
+    {
+        get => position;
+
+        set {
+            Vector2 oldPosition = position;
+            position = value;
+            if (position != oldPosition)
+            {
+                EventManager.OnUnitMove.Invoke(new GameEventPayload()
+                {
+                    {"Unit", this},
+                    {"NewPosition", position},
+                    {"OldPosition", oldPosition}
+                }
+                );
+            }
+        }
+    }
 
     /// <summary>
     /// Les dommages qu'infligent l'unité
     /// </summary>
-    public int damage;
+    private int damage;
 
     /// <summary>
     /// Le cout initial d'une unité, a multiplier par le nombre d'unité
