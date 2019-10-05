@@ -89,6 +89,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4703760701967251252}
   - component: {fileID: 7420513079007310543}
+  - component: {fileID: 5047708400444947134}
+  - component: {fileID: -4821062040901897936}
   m_Layer: 0
   m_Name: Suppobusier
   m_TagString: Untagged
@@ -123,6 +125,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fff3ccf19a888548a65743e1dfcdb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!111 &5047708400444947134
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848535275313705296}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d3242066f1addf847b7050c9917011d7, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &-4821062040901897936
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848535275313705296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 45d00543a87453f4a845e66e7b87cc35, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8057368418196386804
 GameObject:
   m_ObjectHideFlags: 0
