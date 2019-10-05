@@ -85,6 +85,15 @@ public class Unit
     /// </summary>
     public int moveSpeed;
 
+    /// <summary>
+    /// Le palier à partir duquel le prix de l'unité augmente
+    /// </summary>
+    public int stepPrice;
+
+    /// <summary>
+    /// Le facteur d'évolution du prix lorsqu'une même unité est achetée plusieurs fois
+    /// </summary>
+    public float priceFactor;
 
     public Unit(Unit unit) {
         this.HP = unit.HP;
@@ -92,5 +101,7 @@ public class Unit
         this.damage = unit.damage;
         this.initialPrice = unit.initialPrice;
         this.moveSpeed = unit.moveSpeed;
+        this.stepPrice = unit.stepPrice;
+        this.priceFactor = unit.priceFactor;
     }
 }
