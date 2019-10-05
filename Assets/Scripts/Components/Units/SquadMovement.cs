@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SquadMovement : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class SquadMovement : MonoBehaviour
     {
         Squad s = gepl.Get<Squad>("Squad");
 
-        if (s == squad)
+        if (s == squad && SquadManager.GetSquadHealth(squad) > 0)
         {
-            transform.position = Utils.ModelPositionToWorldPosition(squad.Position);
+            transform.DOMove(Utils.ModelPositionToWorldPosition(squad.Position), TempoManager.oneBeatEverySeconds / 1.5f);
         }
 
     }
