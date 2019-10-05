@@ -95,6 +95,11 @@ public class Unit
     /// </summary>
     public float priceFactor;
 
+    /// <summary>
+    /// Le nom de l'unité
+    /// </summary>
+    public string maname;
+
     public Unit(Unit unit) {
         this.HP = unit.HP;
         this.Position = unit.Position;
@@ -103,6 +108,7 @@ public class Unit
         this.moveSpeed = unit.moveSpeed;
         this.stepPrice = unit.stepPrice;
         this.priceFactor = unit.priceFactor;
+        this.maname = unit.maname;
     }
 
     public Unit(UnitAsset unitAsset, Vector3 position)
@@ -114,5 +120,6 @@ public class Unit
         this.moveSpeed = unitAsset.moveSpeed;
         this.stepPrice = unitAsset.stepPrice;
         this.priceFactor = unitAsset.priceFactor;
+        this.maname = unitAsset.maname;
     }
 }

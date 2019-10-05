@@ -22,14 +22,14 @@ public class SquadManager
     /// </summary>
     /// <param name="unit">Le type d'unité de l'escouade</param>
     /// <param name="number">Le nombre d'unités à ajouter à l'escouade</param>
-    public static void PurchaseSquad(Unit unit, int number, int value) {
+    public static Squad PurchaseSquad(Unit unit, int number, int value) {
         Squad squad = new Squad();
         squad.value = value;
         for(int i=0; i<number; i++) {
             squad.units.Add(new Unit(unit));
         }
         inInventorySquads.Add(squad);
-        
+        return squad;
     }
 
     /// <summary>

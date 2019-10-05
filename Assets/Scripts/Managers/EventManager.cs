@@ -71,4 +71,38 @@ public static class EventManager
     /// </summary>
     /// <returns></returns>
     public static GameEvent OnSquadMove = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'un joueur achète ou vend une unité
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// /// 
+    /// "Item" -> (string) Le nom de l'item affecté
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnPurchaseUnit = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'un joueur achète ou vend une escouade
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnPurchaseSquad = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque le nombre d'unités sélectionnées évolue
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnAmountChange = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque le nombre d'unités sélectionnées évolue
+    /// 
+    /// "Amount" -> (int) Nouveau prix à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnUnitChange = new GameEvent();
 }
