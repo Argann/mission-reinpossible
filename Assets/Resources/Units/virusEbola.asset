@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2b26106adbe89b499878d420ff1a7b3, type: 3}
-  m_Name: bliblib
+  m_Name: virusEbola
   m_EditorClassIdentifier: 
-  maxHP: 10
-  damage: 10
-  initialPrice: 10
+  maxHP: 3
+  damage: 3
+  initialPrice: 4
   moveSpeed: 1
-  stepPrice: 10
+  stepPrice: 5
   priceFactor: 1.1
   maname: bliblib

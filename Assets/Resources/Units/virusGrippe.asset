@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2b26106adbe89b499878d420ff1a7b3, type: 3}
-  m_Name: bloblob
+  m_Name: virusGrippe
   m_EditorClassIdentifier: 
-  maxHP: 10
-  damage: 100
-  initialPrice: 10
+  maxHP: 2
+  damage: 2
+  initialPrice: 1
   moveSpeed: 1
-  stepPrice: 10
-  priceFactor: 1.1
+  stepPrice: 5
+  priceFactor: 1.5
   maname: bloblob
