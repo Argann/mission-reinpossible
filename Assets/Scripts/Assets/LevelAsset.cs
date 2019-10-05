@@ -30,5 +30,5 @@ public class LevelAsset : ScriptableObject
     /// <summary>
     /// Liste de tous les chemins possibles pour le niveau
     /// </summary>
-    public List<Path> paths = new List<Path>();
+    public List<GamePath> paths = new List<GamePath>();
 }

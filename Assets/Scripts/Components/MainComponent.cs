@@ -47,6 +47,8 @@ public class MainComponent : MonoBehaviour
     [Header("Variables")]
     public float modelToWorldScaleFactor;
 
+    public int level;
+
     /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
     /// du composant
@@ -54,7 +56,7 @@ public class MainComponent : MonoBehaviour
     void Awake()
     {
         MapManager.EmptyMapObjects();
-        LevelManager.LoadLevel(0);
+        LevelManager.LoadLevel(level);
 
         EventManager.OnTempoBeat.AddListener(_ => {
 
@@ -62,17 +64,6 @@ public class MainComponent : MonoBehaviour
             TurretManager.AttackTurrets();
 
         });
-    }
-
-    public void DebugSummon()
-    {
-        Squad squad = new Squad();
-        squad.units = new List<Unit>()
-        {
-            new Unit(SquadManager.LoadUnitAssets()[0], Vector3.zero)
-        };
-
-        SquadManager.SummonSquad(squad);
     }
 
     void OnEnable()

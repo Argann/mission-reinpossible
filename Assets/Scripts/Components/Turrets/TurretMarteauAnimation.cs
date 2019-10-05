@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class TurretMarteauAnimation : MonoBehaviour
 {
@@ -30,11 +32,13 @@ public class TurretMarteauAnimation : MonoBehaviour
 
         if (TempoManager.beatNumber % turret.frequency == 0)
         {
-            bras.transform.localRotation = Quaternion.Euler(90, 0, 0);
+            bras.transform.DOLocalRotate(new Vector3(90, 0, 0), TempoManager.oneBeatEverySeconds / 1.9f).SetEase(Ease.InOutBack);
+            //bras.transform.localRotation = Quaternion.Euler(90, 0, 0);
         }
         else
         {
-            bras.transform.localRotation = Quaternion.identity;
+            bras.transform.DOLocalRotate(new Vector3(0, 0, 0), TempoManager.oneBeatEverySeconds / 1.9f).SetEase(Ease.OutBack);
+            //bras.transform.localRotation = Quaternion.identity;
         }
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bloblob
   m_EditorClassIdentifier: 
   maxHP: 10
-  damage: 10
+  damage: 100
   initialPrice: 10
   moveSpeed: 1
   stepPrice: 10

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SeekerAutoRotate : MonoBehaviour
 {
@@ -30,6 +31,6 @@ public class SeekerAutoRotate : MonoBehaviour
 
         Vector3 targetPos = gepl.Get<Squad>("Squad").Position;
 
-        transform.LookAt(Utils.ModelPositionToWorldPosition(targetPos));
+        transform.DOLookAt(Utils.ModelPositionToWorldPosition(targetPos), TempoManager.oneBeatEverySeconds / 1.6f).SetEase(Ease.InOutBack);
     }
 }

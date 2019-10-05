@@ -149,6 +149,14 @@ public class ShopManager
             ShopManager.SellSquad(squad);
         });
 
+        instance.transform
+            .Find("Deployer")
+            .GetComponent<Button>()
+            .onClick.AddListener(() => {
+                SquadManager.SummonSquad(squad);
+                GameObject.Destroy(instance);
+            });
+
         CurrentAmount = 0;
         CurrentPrice = currentUnit.initialPrice;
         CurrentCost = 0;
