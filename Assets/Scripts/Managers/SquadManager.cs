@@ -50,7 +50,7 @@ public class SquadManager
     public static void MoveSquads()
     {
         foreach(Squad squad in inGameSquads) {
-            //squad.TriggerMovement();
+            //todo : squad.TriggerMovement();
         }
     }
 
