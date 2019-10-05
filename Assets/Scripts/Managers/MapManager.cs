@@ -58,7 +58,7 @@ public static class MapManager
     /// Méthode permettant de savoir si une case est actuellement
     /// occupée par une entité de jeu ou non
     /// </summary>
-    public static bool IsCellEmpty(Vector2 position)
+    public static bool IsCellEmpty(Vector3 position)
     {
         return map.gameEntities.Any(_ => _.position == position);
     }
@@ -67,7 +67,7 @@ public static class MapManager
     /// Methode permettant de récupérer le GameEntity situé à
     /// la position donnée en paramètre
     /// </summary>
-    public static GameEntity GetEntityAtPosition(Vector2 position)
+    public static GameEntity GetEntityAtPosition(Vector3 position)
     {
         return map.gameEntities.Find(_ => _.position == position);
     }
