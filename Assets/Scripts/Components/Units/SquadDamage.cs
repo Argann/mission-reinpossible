@@ -25,23 +25,16 @@ public class SquadDamage : MonoBehaviour
 
     void ProcessHit(GameEventPayload gepl)
     {
-        Debug.Log("Damage!");
-
         if (gepl.Get<Squad>("Squad") == squad)
         {
-            Debug.Log("But Not Me!");
-
             // TODO
         }
     }
 
     void ProcessDeath(GameEventPayload gepl)
     {
-        Debug.Log("Dead!");
         if (gepl.Get<Squad>("Squad") == squad)
         {
-            Debug.Log("But Not Me !");
-
             Destroy(gameObject);
         }
     }

@@ -40,6 +40,10 @@ public class MainComponent : MonoBehaviour
 
     public GameObject TurretMarteau;
 
+    public GameObject TurretGunringue;
+
+    public GameObject TurretSuppobusier;
+
     [Header("Variables")]
     public float modelToWorldScaleFactor;
 

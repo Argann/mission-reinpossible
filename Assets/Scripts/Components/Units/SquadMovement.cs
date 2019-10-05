@@ -28,7 +28,9 @@ public class SquadMovement : MonoBehaviour
         Squad s = gepl.Get<Squad>("Squad");
 
         if (s == squad)
+        {
             transform.position = Utils.ModelPositionToWorldPosition(squad.Position);
+        }
 
     }
 }

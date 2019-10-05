@@ -11,19 +11,21 @@ public class LevelAsset : ScriptableObject
     /// Structure associant un asset d'entité à une position de base
     /// </summary>
     [System.Serializable]
-    public struct EntityStartPosition
+    public struct EntityStartState
     {
         public GameEntityAsset entityAsset;
 
         public Vector3 startPosition;
 
         public Vector3 startRotation;
+
+        public List<Vector3> aimPositions;
     }
 
     /// <summary>
     /// La liste des entités du niveau
     /// </summary>
-    public List<EntityStartPosition> gameEntities = new List<EntityStartPosition>();
+    public List<EntityStartState> gameEntities = new List<EntityStartState>();
 
     /// <summary>
     /// Liste de tous les chemins possibles pour le niveau

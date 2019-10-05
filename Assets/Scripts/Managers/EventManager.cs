@@ -87,4 +87,26 @@ public static class EventManager
     /// "Squad" -> (Squad) Squad tuée
     /// </summary>
     public static GameEvent OnSquadDeath = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une tourelle attaque une escouade
+    /// 
+    /// "Turret" -> (Turret) Tourelle attaquante
+    /// 
+    /// "Squad" -> (Squad) Escouade attaquée
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnTurretAttack = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque l'organe est blessé
+    ///
+    /// "HitAmount" -> (int) Montant des dégats
+    /// </summary>
+    public static GameEvent OnOrganHit = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque l'organe est tuée
+    /// </summary>
+    public static GameEvent OnOrganDeath = new GameEvent();
 }

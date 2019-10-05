@@ -32,7 +32,7 @@ public class TurretManager
     {
         inGameTurrets.Add(turret);
 
-        if (turret.behaviour is AimedTurret)
+        if (turret.turretType == Turret.TurretType.Attendrisseur)
         {
             // Entité
             GameObject go = GameObject.Instantiate(
@@ -40,7 +40,45 @@ public class TurretManager
                 Utils.ModelPositionToWorldPosition(turret.Position),
                 Quaternion.identity
             );
-            go.GetComponent<TurretMarteauAnimation>().turret = turret;
+            go.GetComponent<TurretComponent>().turret = turret;
+            go.transform.rotation = Quaternion.Euler(turret.rotation);
+
+            // Case
+            GameObject.Instantiate(
+                MainComponent.Instance.tile, 
+                Utils.ModelPositionToWorldPosition(turret.Position), 
+                Quaternion.identity, 
+                MainComponent.Instance.mapContainer.transform
+                );
+        }
+        else if (turret.turretType == Turret.TurretType.Gunringue)
+        {
+            // Entité
+            GameObject go = GameObject.Instantiate(
+                MainComponent.Instance.TurretGunringue,
+                Utils.ModelPositionToWorldPosition(turret.Position),
+                Quaternion.identity
+            );
+            go.GetComponent<TurretComponent>().turret = turret;
+            go.transform.rotation = Quaternion.Euler(turret.rotation);
+
+            // Case
+            GameObject.Instantiate(
+                MainComponent.Instance.tile, 
+                Utils.ModelPositionToWorldPosition(turret.Position), 
+                Quaternion.identity, 
+                MainComponent.Instance.mapContainer.transform
+                );
+        }
+        else if (turret.turretType == Turret.TurretType.Suppobusier)
+        {
+            // Entité
+            GameObject go = GameObject.Instantiate(
+                MainComponent.Instance.TurretSuppobusier,
+                Utils.ModelPositionToWorldPosition(turret.Position),
+                Quaternion.identity
+            );
+            go.GetComponent<TurretComponent>().turret = turret;
             go.transform.rotation = Quaternion.Euler(turret.rotation);
 
             // Case
