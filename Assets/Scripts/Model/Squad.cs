@@ -10,6 +10,10 @@ public class Squad : GameEntity
     /// <summary>
     /// La liste des unités comprises dans l'escouade
     /// </summary>
-    public List<Unit> units;
+    public List<Unit> units = new List<Unit>();
 
+    /// <summary>
+    /// La valeur (prix) de l'escouade, nécessaire pour le remboursement en cas de vente
+    /// </summary>
+    public int value;
 }
