@@ -19,3 +19,4 @@ MonoBehaviour:
   stepPrice: 10
   priceFactor: 1.1
   maname: bliblib
+  icon: {fileID: 21300000, guid: fcb440a65b3b1dd42950047396e95910, type: 3}
