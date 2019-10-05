@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2b26106adbe89b499878d420ff1a7b3, type: 3}
-  m_Name: bloblob
+  m_Name: virusEbola
   m_EditorClassIdentifier: 
-  maxHP: 10
-  damage: 100
-  initialPrice: 10
+  maxHP: 3
+  damage: 3
+  initialPrice: 4
   moveSpeed: 1
-  stepPrice: 10
+  stepPrice: 5
   priceFactor: 1.1
-  maname: bloblob
-  icon: {fileID: 21300000, guid: b74b7fde45909094cbbed725aa399c57, type: 3}
+  maname: bliblib
+  icon: {fileID: 21300000, guid: fcb440a65b3b1dd42950047396e95910, type: 3}

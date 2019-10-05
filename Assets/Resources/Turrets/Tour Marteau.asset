@@ -15,6 +15,6 @@ MonoBehaviour:
   behaviour: 0
   turretType: 1
   hp: 9999
-  damage: 200
+  damage: 1
   multipleAttack: 1
   frequency: 2
