@@ -1,10 +1,13 @@
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
+using System.Collections.Generic;
 
 public class LevelEditorWindow : EditorWindow 
 {
     private Vector2 generalScroll;
+
+    private int currentLevelSelected = 0;
 
     /// <summary>
     /// Méthode lancée à l'activation de l'éditeur
@@ -12,6 +15,7 @@ public class LevelEditorWindow : EditorWindow
     void OnEnable() 
     {
         titleContent.text = "Mission Rein-Possible - Level Editor";
+        LevelManager.RefreshLevelList();
     }
 
     /// <summary>
@@ -23,11 +27,6 @@ public class LevelEditorWindow : EditorWindow
     {
         EditorWindow ew = EditorWindow.GetWindow(typeof(LevelEditorWindow));
         ew.minSize = new Vector2(500, 500);
-    }
-
-    void Update()
-    {
-        Repaint();
     }
 
     /// <summary>
@@ -55,6 +54,35 @@ public class LevelEditorWindow : EditorWindow
 
         Space();
 
+        EditorGUILayout.BeginHorizontal();
+
+        if (GUILayout.Button("Raffraîchir liste"))
+        {
+            LevelManager.RefreshLevelList();
+        }
+
+        if (GUILayout.Button("Générer test"))
+        {
+            LevelManager.LoadLevel(currentLevelSelected);
+        }
+
+        if (GUILayout.Button("Supprimer test"))
+        {
+            MapManager.EmptyMapObjects();
+        }
+
+        EditorGUILayout.EndHorizontal();
+
+        if (LevelManager.levels.Count() == 0)
+            return;
+
+        if (currentLevelSelected >= LevelManager.levels.Count())
+            currentLevelSelected = 0;
+
+        currentLevelSelected = EditorGUILayout.Popup(currentLevelSelected, LevelManager.levels.Select(_ => _.name).ToArray());
+
+        Space();
+
         generalScroll = GUILayout.BeginScrollView(generalScroll);
     }
 
@@ -63,9 +91,7 @@ public class LevelEditorWindow : EditorWindow
     /// </summary>
     void DrawLevelEditorMenu() {
 
-        Label("Levels", 15);
-
-        // TODO
+        Editor.CreateEditor(LevelManager.levels[currentLevelSelected]).OnInspectorGUI();
 
     }
 

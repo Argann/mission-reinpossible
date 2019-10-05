@@ -9,7 +9,28 @@ public class MainComponent : MonoBehaviour
     /// <summary>
     /// Instance statique du Main Component
     /// </summary>
-    public static MainComponent instance;
+    private static MainComponent instance;
+
+    public static MainComponent Instance
+    {
+        get {
+            if (instance == null)
+            {
+                instance = GameObject.Find("Main Component").GetComponent<MainComponent>();
+            }
+            return instance;
+        }
+    }
+
+    [Header("Containers")]
+    public GameObject mapContainer;
+
+    /// <summary>
+    /// Préfab représentant une tuile de jeu
+    /// </summary>
+    [Header("Prefabs")]
+    [Tooltip("Quel est le préfab représentant une tuile de jeu ?")]
+    public GameObject tile;
 
     /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
@@ -17,13 +38,17 @@ public class MainComponent : MonoBehaviour
     /// </summary>
     void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-        }
+        MapManager.EmptyMapObjects();
+        LevelManager.LoadLevel(0);
+    }
+
+    void OnEnable()
+    {
+        TempoManager.StartBeat();
+    }
+
+    void OnDisable()
+    {
+        TempoManager.StopBeat();
     }
 }

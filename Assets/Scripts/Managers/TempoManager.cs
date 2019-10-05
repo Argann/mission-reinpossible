@@ -16,14 +16,14 @@ public static class TempoManager
     /// <summary>
     /// Fréquence de battements, en secondes
     /// </summary>
-    public static float oneBeatEverySeconds;
+    public static float oneBeatEverySeconds = 1f;
 
     /// <summary>
     /// Méthode permettant de lancer le système de battements du jeu
     /// </summary>
     public static void StartBeat()
     {
-        MainComponent.instance.StartCoroutine(TempoCoroutine());
+        MainComponent.Instance.StartCoroutine(TempoCoroutine());
     }
 
     /// <summary>
@@ -31,7 +31,7 @@ public static class TempoManager
     /// </summary>
     public static void StopBeat()
     {
-        MainComponent.instance.StopCoroutine(TempoCoroutine());
+        MainComponent.Instance.StopCoroutine(TempoCoroutine());
     }
 
     /// <summary>

@@ -15,5 +15,14 @@ public class GameMap
     /// <summary>
     /// Liste de tous les chemins possibles pour le niveau
     /// </summary>
-    public List<List<Vector2>> paths = new List<List<Vector2>>();
+    public List<List<Vector3>> paths = new List<List<Vector3>>();
+
+    /// <summary>
+    /// Méthode permettant de reset la carte actuelle.
+    /// </summary>
+    public void Reset()
+    {
+        gameEntities = new List<GameEntity>();
+        paths = new List<List<Vector3>>();
+    }
 }

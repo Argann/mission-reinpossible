@@ -60,7 +60,7 @@ public class SquadManager : MonoBehaviour
     public void MoveSquads()
     {
         foreach(Squad squad in inGameSquads) {
-            squad.TriggerMovement();
+            //squad.TriggerMovement();
         }
     }
 
@@ -72,7 +72,7 @@ public class SquadManager : MonoBehaviour
     public void DamageSquad(Squad squad, int damage) {
         while (damage > 0 && squad.units.Count > 0){
             Unit unit = squad.units[0];
-            damage -= unit.DamageUnit(damage);
+            //damage -= unit.DamageUnit(damage);
             if (unit.HP <= 0) {
                 squad.units.Remove(unit);
             }
@@ -90,7 +90,7 @@ public class SquadManager : MonoBehaviour
     public void DamageSplashSquad(Squad squad, int damage) {
         for(int i=squad.units.Count; i>-1; i--) {
             Unit unit = squad.units[i];
-            unit.DamageUnit(damage);
+            //unit.DamageUnit(damage);
             if (unit.HP <= 0) {
                 squad.units.Remove(unit);
             }
