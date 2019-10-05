@@ -29,8 +29,12 @@ public class SquadManager
             squad.units.Add(new Unit(unit));
         }
         inInventorySquads.Add(squad);
+        
     }
 
+    /// <summary>
+    /// Méthode permettant de supprimer de l'inventaire l'escouade cible
+    /// </summary>
     public static void SellSquad(Squad squad) {
         inInventorySquads.Remove(squad);
     }

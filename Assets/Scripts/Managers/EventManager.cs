@@ -39,4 +39,36 @@ public static class EventManager
     /// "OldPosition" -> (Vector2) Ancienne position de l'unité
     /// </summary>
     public static GameEvent OnUnitMove = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une ou plusieurs unités sont ajoutées à une escouade
+    /// 
+    /// "Unit" -> (Unit) Unité venant d'être ajoutée à l'escouade
+    /// 
+    /// "Squad" -> (Squad) Escouade venant d'ajouter de nouvelles unités
+    /// 
+    /// "NumberAdded" -> (int) Nombre d'unités ajoutées à l'escouade
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnUnitsAddedToSquad = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une escouade est invoquée dans le jeu
+    /// 
+    /// "Squad" -> (Squad) Escouade venant d'être invoquée
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnSquadInvoked = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une escouade se déplace
+    /// 
+    /// "Squad" -> (Squad) Escouade venant de se déplacer
+    /// 
+    /// "NewPosition" -> (Vector2) Nouvelle position de l'escouade
+    ///
+    /// "OldPosition" -> (Vector2) Ancienne position de l'escouade
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnSquadMove = new GameEvent();
 }

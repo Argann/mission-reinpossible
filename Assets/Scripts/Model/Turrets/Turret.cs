@@ -31,4 +31,26 @@ public class Turret : GameEntity
     /// La frequence d'attaque de la tourelle. 0 : tous les tours, 1 : un tour de délai, etc
     /// </summary>
     public int frequency;
+
+    public Turret(TurretAsset asset, Vector3 position)
+    {
+        this.hp = asset.hp;
+        this.damage = asset.damage;
+        this.multipleAttack = asset.multipleAttack;
+        this.frequency = asset.frequency;
+        this.position = position;
+
+        switch (asset.behaviour)
+        {
+            case TurretAsset.Behaviour.Aimed:
+                this.behaviour = new AimedTurret();
+                break;
+            case TurretAsset.Behaviour.Seeker:
+                this.behaviour = new SeekerTurret();
+                break;
+            default:
+                break;
+        }
+        
+    }
 }

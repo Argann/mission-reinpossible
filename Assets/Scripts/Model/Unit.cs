@@ -45,17 +45,17 @@ public class Unit
     /// <summary>
     /// La position des unités en x et y
     /// </summary>
-    private Vector2 position;
+    private Vector3 position;
 
     /// <summary>
     /// Accesseur de la position de l'unité
     /// </summary>
-    public Vector2 Position 
+    public Vector3 Position 
     {
         get => position;
 
         set {
-            Vector2 oldPosition = position;
+            Vector3 oldPosition = position;
             position = value;
             if (position != oldPosition)
             {
@@ -103,5 +103,16 @@ public class Unit
         this.moveSpeed = unit.moveSpeed;
         this.stepPrice = unit.stepPrice;
         this.priceFactor = unit.priceFactor;
+    }
+
+    public Unit(UnitAsset unitAsset, Vector3 position)
+    {
+        this.HP = unitAsset.maxHP;
+        this.Position = position;
+        this.damage = unitAsset.damage;
+        this.initialPrice = unitAsset.initialPrice;
+        this.moveSpeed = unitAsset.moveSpeed;
+        this.stepPrice = unitAsset.stepPrice;
+        this.priceFactor = unitAsset.priceFactor;
     }
 }

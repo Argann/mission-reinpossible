@@ -10,5 +10,5 @@ public class GameEntity
     /// <summary>
     /// Position actuelle de l'entité
     /// </summary>
-    public Vector2 position;
+    public Vector3 position;
 }
