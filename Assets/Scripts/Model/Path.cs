@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Path
+public class GamePath
 {
     [SerializeField]
     public List<Vector3> path = new List<Vector3>();

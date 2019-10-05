@@ -57,6 +57,8 @@ public class SquadManager
     /// </summary>
     public static void MoveSquads()
     {
+        List<Squad> squadToDie = new List<Squad>();
+
         foreach(Squad squad in inGameSquads) {
             
             int squadMoveSpeed = squad.units[0].moveSpeed;
@@ -68,6 +70,17 @@ public class SquadManager
             }
 
             squad.Position = targetPosition;
+
+            if (MapManager.IsEndOfPath(squad.Position))
+            {
+                squadToDie.Add(squad);
+            }
+        }
+
+        foreach (Squad squad in squadToDie)
+        {
+            int damage = Kamikazee(squad);
+            OrganManager.HP -= damage;
         }
     }
 
@@ -104,7 +117,7 @@ public class SquadManager
     /// <param name="squad">L'escouade subissant l'attaque</param>
     /// <param name="damage">Les dégâts infligés à toutes les unités</param>
     public static void DamageSplashSquad(Squad squad, int damage) {
-        for(int i=squad.units.Count; i>-1; i--) {
+        for(int i=squad.units.Count-1; i>-1; i--) {
             Unit unit = squad.units[i];
             DamageUnit(unit, damage);
             if (unit.HP <= 0) {
@@ -161,6 +174,10 @@ public class SquadManager
             result += unit.damage;
         }
         inGameSquads.Remove(squad);
+        EventManager.OnSquadDeath.Invoke(new GameEventPayload()
+        {
+            {"Squad", squad}
+        });
         return result;
     }
 
@@ -185,5 +202,29 @@ public class SquadManager
         }
 
         return unitAssets;
+    }
+
+    public static Squad GetSquadAtPosition(Vector3 position)
+    {
+        return inGameSquads.Find(_ => _.Position == position);
+    }
+
+    public static Squad GetFurthestSquad()
+    {
+        foreach (List<Vector3> path in MapManager.map.paths)
+        {
+            List<Vector3> invertedPath = new List<Vector3>(path);
+            invertedPath.Reverse();
+
+            foreach (Vector3 position in invertedPath)
+            {
+                Squad s = inGameSquads.Find(_ => _.Position == position);
+                if (s != null)
+                {
+                    return s;
+                }
+            }
+        }
+        return null;
     }
 }

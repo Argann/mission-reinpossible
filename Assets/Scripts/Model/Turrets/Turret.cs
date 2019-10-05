@@ -7,6 +7,15 @@ using UnityEngine;
 /// </summary>
 public class Turret : GameEntity
 {
+    public enum TurretType
+    {
+        Gunringue,
+        Attendrisseur,
+        Suppobusier
+    }
+
+    public TurretType turretType;
+
     /// <summary>
     /// Le nombre de points de vie de la tourelle. -- Nécessaire pour les tourelles de type "barrière"
     /// </summary>
@@ -32,8 +41,9 @@ public class Turret : GameEntity
     /// </summary>
     public int frequency;
 
-    public Turret(TurretAsset asset, Vector3 position)
+    public Turret(TurretAsset asset, Vector3 position, List<Vector3> aimPositions = null)
     {
+        this.turretType = asset.turretType;
         this.hp = asset.hp;
         this.damage = asset.damage;
         this.multipleAttack = asset.multipleAttack;
@@ -43,10 +53,10 @@ public class Turret : GameEntity
         switch (asset.behaviour)
         {
             case TurretAsset.Behaviour.Aimed:
-                this.behaviour = new AimedTurret(asset.aimedRelativePositions, this);
+                this.behaviour = new AimedTurret(aimPositions, this);
                 break;
             case TurretAsset.Behaviour.Seeker:
-                this.behaviour = new SeekerTurret();
+                this.behaviour = new SeekerTurret(this);
                 break;
             default:
                 break;

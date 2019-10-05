@@ -10,6 +10,10 @@ public class TurretAsset : GameEntityAsset
         Seeker
     }
 
+    public Behaviour behaviour;
+
+    public Turret.TurretType turretType;
+
     /// <summary>
     /// Le nombre de points de vie de la tourelle. -- Nécessaire pour les tourelles de type "barrière"
     /// </summary>
@@ -21,11 +25,6 @@ public class TurretAsset : GameEntityAsset
     public int damage;
 
     /// <summary>
-    /// Définit les zones attaquées par les tourelles
-    /// </summary>
-    public Behaviour behaviour;
-
-    /// <summary>
     /// Définit si la tourelle attaque toutes les unités (true), ou les unités une à une (false)
     /// </summary>
     public bool multipleAttack;
@@ -34,9 +33,4 @@ public class TurretAsset : GameEntityAsset
     /// La frequence d'attaque de la tourelle. 0 : tous les tours, 1 : un tour de délai, etc
     /// </summary>
     public int frequency;
-
-    /// <summary>
-    /// Liste des positions pour le comportement aimed
-    /// </summary>
-    public List<Vector3> aimedRelativePositions;
 }

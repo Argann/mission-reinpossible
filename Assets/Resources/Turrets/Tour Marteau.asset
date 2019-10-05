@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989c7e1b65594ec47afd27e99e311d77, type: 3}
   m_Name: Tour Marteau
   m_EditorClassIdentifier: 
-  hp: 9999
-  damage: 1
   behaviour: 0
+  turretType: 1
+  hp: 9999
+  damage: 200
   multipleAttack: 1
   frequency: 2
-  aimedPositions:
-  - {x: -1, y: 0, z: 0}

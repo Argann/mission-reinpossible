@@ -10,21 +10,16 @@ public class AimedTurret : TurretBehaviour
     /// <summary>
     /// La liste des cases ciblées par la tourelle
     /// </summary>
-    public List<Vector3> relativePositions;
+    public List<Vector3> positions;
 
     /// <summary>
     /// Référence vers la tourelle
     /// </summary>
     public Turret turret;
 
-    /// <summary>
-    /// Combien de battements sommes nous après le début du jeu ?
-    /// </summary>
-    public int beatCounter;
-
     public AimedTurret(List<Vector3> positions, Turret turret)
     {
-        this.relativePositions = positions;
+        this.positions = positions;
         this.turret = turret;
     }
 
@@ -33,21 +28,20 @@ public class AimedTurret : TurretBehaviour
     /// </summary>
     public override void ProcessAttack()
     {
-        beatCounter++;
-
-        if (beatCounter % turret.frequency != 0)
+        if (TempoManager.beatNumber % turret.frequency != 0)
             return;
-        
-        Debug.Log("HEHEHE");
 
-        foreach (Vector3 position in relativePositions)
+        foreach (Vector3 position in positions)
         {
-            Squad squad = MapManager.GetEntityAtPosition(turret.Position + position) as Squad;
-
-            Debug.Log($"Attack squad {squad}");
+            Squad squad = SquadManager.GetSquadAtPosition(position) as Squad;
 
             if (squad != null)
             {
+                EventManager.OnTurretAttack.Invoke(new GameEventPayload()
+                {
+                    {"Turret", turret},
+                    {"Squad", squad}
+                });
                 if (turret.multipleAttack)
                 {
                     SquadManager.DamageSplashSquad(squad, turret.damage);

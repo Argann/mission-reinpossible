@@ -90,6 +90,11 @@ public static class MapManager
         return map.gameEntities.Find(_ => _.Position == position);
     }
 
+    public static bool IsEndOfPath(Vector3 position)
+    {
+        return map.paths.Any(_ => _[_.Count - 1] == position);
+    }
+
     /// <summary>
     /// Méthode permettant de récupérer la position de la case
     /// située juste après la position donnée en paramètre.
