@@ -44,8 +44,9 @@ public static class LevelManager
             GameEntity entity = null;
             if (_.entityAsset is TurretAsset asset)
             {
-                entity = new Turret(asset, _.startPosition);
+                entity = new Turret(asset, _.startPosition, _.aimPositions);
                 entity.rotation = _.startRotation;
+                
             }
             return entity;
         }).ToList());

@@ -8,6 +8,11 @@ public class TurretMarteauAnimation : MonoBehaviour
 
     public GameObject bras;
 
+    void Start()
+    {
+        turret = GetComponent<TurretComponent>().turret;
+    }
+
     void OnEnable()
     {
         EventManager.OnTempoBeat.AddListener(ProcessBeat);
@@ -20,6 +25,9 @@ public class TurretMarteauAnimation : MonoBehaviour
 
     void ProcessBeat(GameEventPayload gepl)
     {
+        if (turret == null)
+            return;
+
         if (TempoManager.beatNumber % turret.frequency == 0)
         {
             bras.transform.localRotation = Quaternion.Euler(90, 0, 0);

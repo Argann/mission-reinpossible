@@ -73,6 +73,39 @@ public static class EventManager
     public static GameEvent OnSquadMove = new GameEvent();
 
     /// <summary>
+    /// Evenement invoqué lorsqu'un joueur achète ou vend une unité
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// /// 
+    /// "Item" -> (string) Le nom de l'item affecté
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnPurchaseUnit = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'un joueur achète ou vend une escouade
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnPurchaseSquad = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque le nombre d'unités sélectionnées évolue
+    /// 
+    /// "Amount" -> (int) Nouvelle quantité à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnAmountChange = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque le nombre d'unités sélectionnées évolue
+    /// 
+    /// "Amount" -> (int) Nouveau prix à afficher
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnUnitChange = new GameEvent();
+    
     /// Evenement invoqué lorsqu'une escouade est blessée
     ///
     /// "Squad" -> (Squad) Squad blessée
@@ -87,4 +120,26 @@ public static class EventManager
     /// "Squad" -> (Squad) Squad tuée
     /// </summary>
     public static GameEvent OnSquadDeath = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une tourelle attaque une escouade
+    /// 
+    /// "Turret" -> (Turret) Tourelle attaquante
+    /// 
+    /// "Squad" -> (Squad) Escouade attaquée
+    /// </summary>
+    /// <returns></returns>
+    public static GameEvent OnTurretAttack = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque l'organe est blessé
+    ///
+    /// "HitAmount" -> (int) Montant des dégats
+    /// </summary>
+    public static GameEvent OnOrganHit = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsque l'organe est tuée
+    /// </summary>
+    public static GameEvent OnOrganDeath = new GameEvent();
 }

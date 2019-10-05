@@ -14,4 +14,6 @@ public class UnitAsset : GameEntityAsset
     public int stepPrice;
 
     public float priceFactor;
+
+    public string maname;
 }
