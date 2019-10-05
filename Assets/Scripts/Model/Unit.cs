@@ -73,7 +73,7 @@ public class Unit
     /// <summary>
     /// Les dommages qu'infligent l'unité
     /// </summary>
-    private int damage;
+    public int damage;
 
     /// <summary>
     /// Le cout initial d'une unité, a multiplier par le nombre d'unité
@@ -84,4 +84,13 @@ public class Unit
     /// Le nombre de cases traversées par une unité à chaque battement
     /// </summary>
     public int moveSpeed;
+
+
+    public Unit(Unit unit) {
+        this.HP = unit.HP;
+        this.Position = unit.Position;
+        this.damage = unit.damage;
+        this.initialPrice = unit.initialPrice;
+        this.moveSpeed = unit.moveSpeed;
+    }
 }

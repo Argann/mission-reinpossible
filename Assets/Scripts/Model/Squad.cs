@@ -10,6 +10,6 @@ public class Squad : GameEntity
     /// <summary>
     /// La liste des unités comprises dans l'escouade
     /// </summary>
-    public List<Unit> units;
+    public List<Unit> units = new List<Unit>();
 
 }
