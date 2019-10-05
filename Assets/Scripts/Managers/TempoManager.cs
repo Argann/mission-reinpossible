@@ -14,10 +14,9 @@ public class TempoManager : MonoBehaviour
     public static TempoManager instance;
 
     /// <summary>
-    /// Evenement appelé à chaque battement de jeu
+    /// Numéro de battement actuel
     /// </summary>
-    [HideInInspector]
-    public UnityEvent tempoEvent;
+    public int beatNumber = 0;
 
     /// <summary>
     /// Fréquence de battements, en secondes
@@ -64,9 +63,16 @@ public class TempoManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator TempoCoroutine()
     {
-        tempoEvent.Invoke();
+        while (true)
+        {
+            EventManager.OnTempoBeat.Invoke(new GameEventPayload(){
+                {"BeatNumber", beatNumber}
+            });
 
-        yield return new WaitForSeconds(oneBeatEverySeconds);
+            beatNumber++;
+
+            yield return new WaitForSeconds(oneBeatEverySeconds);
+        }
     }
     
 }
