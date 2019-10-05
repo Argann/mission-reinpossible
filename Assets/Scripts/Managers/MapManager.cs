@@ -21,7 +21,7 @@ public static class MapManager
     public static void GeneratePaths(List<List<Vector3>> paths)
     {
         // On réinitialise la map
-        map.Reset();
+        map.ResetPaths();
 
         // On assigne les chemins donnés en paramètres
         map.paths = paths;
@@ -31,7 +31,25 @@ public static class MapManager
         {
             foreach (Vector3 position in path)
             {
-                GameObject.Instantiate(MainComponent.Instance.tile, position, Quaternion.identity, MainComponent.Instance.mapContainer.transform);
+                GameObject.Instantiate(MainComponent.Instance.tile, Utils.ModelPositionToWorldPosition(position), Quaternion.identity, MainComponent.Instance.mapContainer.transform);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Méthode permettant de générer une liste d'entité
+    /// </summary>
+    public static void GenerateGameEntities(List<GameEntity> entities)
+    {
+        map.ResetEntities();
+
+        map.gameEntities = entities;
+
+        foreach (GameEntity entity in map.gameEntities)
+        {
+            if (entity is Turret turret)
+            {
+                TurretManager.AddTurret(turret);
             }
         }
     }
@@ -60,7 +78,7 @@ public static class MapManager
     /// </summary>
     public static bool IsCellEmpty(Vector3 position)
     {
-        return map.gameEntities.Any(_ => _.position == position);
+        return map.gameEntities.Any(_ => _.Position == position);
     }
 
     /// <summary>
@@ -69,7 +87,7 @@ public static class MapManager
     /// </summary>
     public static GameEntity GetEntityAtPosition(Vector3 position)
     {
-        return map.gameEntities.Find(_ => _.position == position);
+        return map.gameEntities.Find(_ => _.Position == position);
     }
 
     /// <summary>

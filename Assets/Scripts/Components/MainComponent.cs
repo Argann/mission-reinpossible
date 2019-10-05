@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -33,6 +34,16 @@ public class MainComponent : MonoBehaviour
     public GameObject tile;
 
     /// <summary>
+    /// Prefab représentant une squad
+    /// </summary>
+    public GameObject Squad;
+
+    public GameObject TurretMarteau;
+
+    [Header("Variables")]
+    public float modelToWorldScaleFactor;
+
+    /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
     /// du composant
     /// </summary>
@@ -40,6 +51,24 @@ public class MainComponent : MonoBehaviour
     {
         MapManager.EmptyMapObjects();
         LevelManager.LoadLevel(0);
+
+        EventManager.OnTempoBeat.AddListener(_ => {
+
+            SquadManager.MoveSquads();
+            TurretManager.AttackTurrets();
+
+        });
+    }
+
+    public void DebugSummon()
+    {
+        Squad squad = new Squad();
+        squad.units = new List<Unit>()
+        {
+            new Unit(SquadManager.LoadUnitAssets()[0], Vector3.zero)
+        };
+
+        SquadManager.SummonSquad(squad);
     }
 
     void OnEnable()

@@ -1,13 +1,23 @@
 {
+<<<<<<< HEAD
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+=======
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+>>>>>>> bb12da4b1a13e37a50f56c48d3e3e82f02a30478
     "version": "0.2.0",
     "configurations": [
         {
             "name": "Unity Editor",
             "type": "unity",
+<<<<<<< HEAD
             "path": "/d:/User/Desktop/MissionReinpossible/mission-reinpossible/Library/EditorInstance.json",
+=======
+            "path": "/c:/Users/Argann/Desktop/Projets/Unity/Mission Reinpossible/Library/EditorInstance.json",
+>>>>>>> bb12da4b1a13e37a50f56c48d3e3e82f02a30478
             "request": "launch"
         },
         {

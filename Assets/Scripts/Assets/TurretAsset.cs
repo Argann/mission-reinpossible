@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game Design/Turret Asset", fileName = "New Turret Asset")]
@@ -33,4 +34,9 @@ public class TurretAsset : GameEntityAsset
     /// La frequence d'attaque de la tourelle. 0 : tous les tours, 1 : un tour de délai, etc
     /// </summary>
     public int frequency;
+
+    /// <summary>
+    /// Liste des positions pour le comportement aimed
+    /// </summary>
+    public List<Vector3> aimedRelativePositions;
 }

@@ -105,4 +105,19 @@ public static class EventManager
     /// </summary>
     /// <returns></returns>
     public static GameEvent OnUnitChange = new GameEvent();
+    
+    /// Evenement invoqué lorsqu'une escouade est blessée
+    ///
+    /// "Squad" -> (Squad) Squad blessée
+    /// 
+    /// "HitAmount" -> (int) Montant des dégats
+    /// </summary>
+    public static GameEvent OnSquadHit = new GameEvent();
+
+    /// <summary>
+    /// Evenement invoqué lorsqu'une escouade est tuée
+    ///
+    /// "Squad" -> (Squad) Squad tuée
+    /// </summary>
+    public static GameEvent OnSquadDeath = new GameEvent();
 }

@@ -11,4 +11,9 @@ public class SeekerTurret : TurretBehaviour
     /// La victime de cette tourelle
     /// </summary>
     public Squad squad;
+
+    public override void ProcessAttack()
+    {
+        throw new System.NotImplementedException();
+    }
 }

@@ -20,9 +20,16 @@ public class GameMap
     /// <summary>
     /// Méthode permettant de reset la carte actuelle.
     /// </summary>
-    public void Reset()
+    public void ResetPaths()
+    {
+        paths = new List<List<Vector3>>();
+    }
+
+    /// <summary>
+    /// Méthode permettant de reset la liste des entitées présentes dans le jeu
+    /// </summary>
+    public void ResetEntities()
     {
         gameEntities = new List<GameEntity>();
-        paths = new List<List<Vector3>>();
     }
 }

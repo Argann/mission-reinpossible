@@ -38,6 +38,17 @@ public static class LevelManager
 
         // On envoi les chemins possibles au manager de cartes
         MapManager.GeneratePaths(paths);
+
+        // Et on charge également les entités
+        MapManager.GenerateGameEntities(level.gameEntities.Select(_ => {
+            GameEntity entity = null;
+            if (_.entityAsset is TurretAsset asset)
+            {
+                entity = new Turret(asset, _.startPosition);
+                entity.rotation = _.startRotation;
+            }
+            return entity;
+        }).ToList());
     }
 
     /// <summary>

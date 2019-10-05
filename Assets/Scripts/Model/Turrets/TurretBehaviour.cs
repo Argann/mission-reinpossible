@@ -5,4 +5,7 @@ using UnityEngine;
 /// <summary>
 /// La classe TurretBehaviour est la classe mère utilisée par les comportements de tourelles
 /// </summary>
-public class TurretBehaviour{}
+public abstract class TurretBehaviour
+{
+    public abstract void ProcessAttack();
+}
