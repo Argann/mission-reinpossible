@@ -6,62 +6,39 @@ using UnityEngine.Events;
 /// <summary>
 /// Manager permettant de gérer le tempo du jeu
 /// </summary>
-public class TempoManager : MonoBehaviour
+public static class TempoManager
 {
-    /// <summary>
-    /// Instance statique du manager de tempo
-    /// </summary>
-    public static TempoManager instance;
-
     /// <summary>
     /// Numéro de battement actuel
     /// </summary>
-    public int beatNumber = 0;
+    public static int beatNumber = 0;
 
     /// <summary>
     /// Fréquence de battements, en secondes
     /// </summary>
-    public float oneBeatEverySeconds;
-
-    /// <summary>
-    /// Coroutine gérant les battements
-    /// </summary>
-    private Coroutine tempoCoroutine;
-
-    /// <summary>
-    /// Méthode lancée automatiquement par Unity
-    /// lors du chargement du script
-    /// </summary>
-    void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
+    public static float oneBeatEverySeconds;
 
     /// <summary>
     /// Méthode permettant de lancer le système de battements du jeu
     /// </summary>
-    public void StartBeat()
+    public static void StartBeat()
     {
-        tempoCoroutine = StartCoroutine(TempoCoroutine());
+        MainComponent.instance.StartCoroutine(TempoCoroutine());
     }
 
     /// <summary>
     /// Méthode permettant de stopper le système de battements du jeu
     /// </summary>
-    public void StopBeat()
+    public static void StopBeat()
     {
-        if (tempoCoroutine == null)
-            return;
-
-        StopCoroutine(tempoCoroutine);
+        MainComponent.instance.StopCoroutine(TempoCoroutine());
     }
 
     /// <summary>
     /// Coroutine de battement
     /// </summary>
     /// <returns></returns>
-    private IEnumerator TempoCoroutine()
+    private static IEnumerator TempoCoroutine()
     {
         while (true)
         {
