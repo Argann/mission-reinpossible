@@ -157,6 +157,22 @@ public class ShopManager
                 GameObject.Destroy(instance);
             });
 
+        Image myImage = instance.transform
+                            .Find("Icon")
+                            .GetComponent<Image>();
+        myImage.sprite = currentUnit.icon;
+
+        for(int i=1; i<5; i++) {
+            if (currentAmount > 5*i) {
+                Image tmp = instance.transform
+                        .Find("Icon"+i)
+                        .GetComponent<Image>();
+                tmp.sprite = currentUnit.icon;
+                tmp.color = myImage.color;
+            }
+        }
+        
+
         CurrentAmount = 0;
         CurrentPrice = currentUnit.initialPrice;
         CurrentCost = 0;

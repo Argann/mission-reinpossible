@@ -16,4 +16,6 @@ public class UnitAsset : GameEntityAsset
     public float priceFactor;
 
     public string maname;
+
+    public Sprite icon;
 }
