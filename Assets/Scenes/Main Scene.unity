@@ -317,13 +317,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335974057}
-  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
-  m_LocalPosition: {x: -3.85, y: 10, z: -4.3}
+  m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
+  m_LocalPosition: {x: 8.02, y: 10, z: -3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.000004, y: -45, z: 0}
 --- !u!1 &1351965946
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +443,7 @@ MonoBehaviour:
   TurretSuppobusier: {fileID: 4848535275313705296, guid: b45ff49d5856aea43953c844c517ad27,
     type: 3}
   modelToWorldScaleFactor: 2
+  level: 0
 --- !u!4 &1847272553
 Transform:
   m_ObjectHideFlags: 0
