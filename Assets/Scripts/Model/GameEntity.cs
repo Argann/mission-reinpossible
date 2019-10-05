@@ -10,5 +10,16 @@ public class GameEntity
     /// <summary>
     /// Position actuelle de l'entité
     /// </summary>
-    public Vector3 position;
+    protected Vector3 position;
+
+    public virtual Vector3 Position
+    {
+        get => position;
+        set => position = value;
+    }
+
+    /// <summary>
+    /// Position actuelle de l'entité
+    /// </summary>
+    public Vector3 rotation;
 }

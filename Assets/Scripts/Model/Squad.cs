@@ -16,4 +16,22 @@ public class Squad : GameEntity
     /// La valeur (prix) de l'escouade, nécessaire pour le remboursement en cas de vente
     /// </summary>
     public int value;
+
+    public override Vector3 Position
+    {
+        get => position;
+
+        set {
+            Vector3 oldPosition = position;
+            position = value;
+            if (oldPosition != position)
+            {
+                EventManager.OnSquadMove.Invoke(new GameEventPayload(){
+                    {"Squad", this},
+                    {"NewPosition", position},
+                    {"OldPosition", oldPosition}
+                });
+            }
+        }
+    }
 }

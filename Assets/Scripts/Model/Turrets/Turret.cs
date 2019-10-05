@@ -43,7 +43,7 @@ public class Turret : GameEntity
         switch (asset.behaviour)
         {
             case TurretAsset.Behaviour.Aimed:
-                this.behaviour = new AimedTurret();
+                this.behaviour = new AimedTurret(asset.aimedRelativePositions, this);
                 break;
             case TurretAsset.Behaviour.Seeker:
                 this.behaviour = new SeekerTurret();
@@ -51,6 +51,11 @@ public class Turret : GameEntity
             default:
                 break;
         }
-        
     }
+
+    public void ProcessAttack()
+    {
+        this.behaviour.ProcessAttack();
+    }
+
 }

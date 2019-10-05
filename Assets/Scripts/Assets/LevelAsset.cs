@@ -16,6 +16,8 @@ public class LevelAsset : ScriptableObject
         public GameEntityAsset entityAsset;
 
         public Vector3 startPosition;
+
+        public Vector3 startRotation;
     }
 
     /// <summary>

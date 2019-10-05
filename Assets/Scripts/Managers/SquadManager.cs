@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -29,7 +30,6 @@ public class SquadManager
             squad.units.Add(new Unit(unit));
         }
         inInventorySquads.Add(squad);
-        
     }
 
     /// <summary>
@@ -46,6 +46,9 @@ public class SquadManager
     public static void SummonSquad(Squad squad) {
         inInventorySquads.Remove(squad);
         inGameSquads.Add(squad);
+
+        GameObject squadGo = GameObject.Instantiate(MainComponent.Instance.Squad, Utils.ModelPositionToWorldPosition(squad.Position), Quaternion.identity);
+        squadGo.GetComponent<SquadComponent>().squad = squad;
     }
 
     /// <summary>
@@ -54,7 +57,16 @@ public class SquadManager
     public static void MoveSquads()
     {
         foreach(Squad squad in inGameSquads) {
-            //todo : squad.TriggerMovement();
+            
+            int squadMoveSpeed = squad.units[0].moveSpeed;
+            Vector3 targetPosition = squad.Position;
+
+            for (int i = 0; i < squadMoveSpeed; i++)
+            {
+                targetPosition = MapManager.GetNextPositionInPath(targetPosition);
+            }
+
+            squad.Position = targetPosition;
         }
     }
 
@@ -70,9 +82,18 @@ public class SquadManager
             if (unit.HP <= 0) {
                 squad.units.Remove(unit);
             }
+            EventManager.OnSquadHit.Invoke(new GameEventPayload()
+            {
+                {"Squad", squad},
+                {"HitAmount", damage}
+            });
         }
         if (squad.units.Count == 0) {
             inGameSquads.Remove(squad);
+            EventManager.OnSquadDeath.Invoke(new GameEventPayload()
+            {
+                {"Squad", squad}
+            });
         }
     }
 
@@ -88,9 +109,18 @@ public class SquadManager
             if (unit.HP <= 0) {
                 squad.units.Remove(unit);
             }
+            EventManager.OnSquadHit.Invoke(new GameEventPayload()
+            {
+                {"Squad", squad},
+                {"HitAmount", damage}
+            });
         }
         if (squad.units.Count == 0) {
             inGameSquads.Remove(squad);
+            EventManager.OnSquadDeath.Invoke(new GameEventPayload()
+            {
+                {"Squad", squad}
+            });
         }
     }
 
@@ -131,5 +161,28 @@ public class SquadManager
         }
         inGameSquads.Remove(squad);
         return result;
+    }
+
+    /// <summary>
+    /// Méthode permettant de recharger la liste des niveaux
+    /// </summary>
+    public static List<UnitAsset> LoadUnitAssets()
+    {
+        List<UnitAsset> unitAssets = new List<UnitAsset>();
+
+        Object[] rawObjects = Resources.LoadAll("Units");
+
+        if (rawObjects.Count() > 0)
+        {
+            for (int i = 0; i < rawObjects.Count(); i++)
+            {
+                UnitAsset unit = rawObjects[i] as UnitAsset;
+
+                if (unit != null)
+                    unitAssets.Add(unit);
+            }
+        }
+
+        return unitAssets;
     }
 }
