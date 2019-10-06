@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1003569817504194950}
   - component: {fileID: 1003569817504194951}
   - component: {fileID: 5040039123983553634}
+  - component: {fileID: 1209265165558649695}
+  - component: {fileID: 2318876923979271121}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -732,3 +734,205 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8542873850713340670}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1209265165558649695
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003569817504194948}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2318876923979271121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003569817504194948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d77802f53fc404fbc1b73f5e830ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elements:
+  - name: Musique
+    clip: {fileID: 8300000, guid: 7bd7398a4ffb19b438557f83b5d52155, type: 3}
+    delay: 0
+    volume: 0
+  - name: -- TOURELLES --
+    clip: {fileID: 0}
+    delay: 0
+    volume: 0
+  - name: Marteau - Charge
+    clip: {fileID: 8300000, guid: 8dfeb17af1ea99b40bbe02b5f0d1965e, type: 3}
+    delay: 0
+    volume: 1
+  - name: Marteau - Stomp
+    clip: {fileID: 8300000, guid: 84de13af84f767245b04cbb1d9105462, type: 3}
+    delay: 0
+    volume: 1
+  - name: Gunringue
+    clip: {fileID: 8300000, guid: 27747208247953947a185ba9347960e6, type: 3}
+    delay: 0
+    volume: 1
+  - name: Suppobusier
+    clip: {fileID: 8300000, guid: a8d54752ac00319418c085c70b3e1651, type: 3}
+    delay: 0
+    volume: 1
+  - name: -- VIRUS --
+    clip: {fileID: 0}
+    delay: 0
+    volume: 1
+  - name: 'Petit Virus - Move #1'
+    clip: {fileID: 8300000, guid: 3f3fc7900fc08c546bf294ce7c6ffe40, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Petit Virus - Move #2'
+    clip: {fileID: 8300000, guid: 9d5c2b6fa7e574643bd52519bd695843, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Petit Virus - Death #1'
+    clip: {fileID: 8300000, guid: a7ed9c46281810e42b4a07bdbe45238a, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Petit Virus - Death #2'
+    clip: {fileID: 8300000, guid: e4528d2798a2bf445bfab4c9be75c94e, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus PT - Move #1'
+    clip: {fileID: 8300000, guid: 21febe3335cadc04e977374d6a46be08, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus PT - Move #2'
+    clip: {fileID: 8300000, guid: 6e60b7a0aa45c684b9ed605650c094d1, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus PT - Death #1'
+    clip: {fileID: 8300000, guid: d366caf20b22a254eb6cb8fa6378cdc0, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus PT - Death #2'
+    clip: {fileID: 8300000, guid: 5e32c49c99be3854bae17a54f97a05c4, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus GT - Move #1'
+    clip: {fileID: 8300000, guid: 1f6fe5962e8e78540aa3693c481efcb7, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus GT - Move #2'
+    clip: {fileID: 8300000, guid: 9923cefe39d93f242a58abae7d35677f, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus GT - Death #1'
+    clip: {fileID: 8300000, guid: 9dca1afc0671e7f4286963d7eb36c308, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Moyen Virus GT - Death #2'
+    clip: {fileID: 8300000, guid: 787d58b844678ea4d9934b46ab6eb332, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Gros Virus - Move #1'
+    clip: {fileID: 8300000, guid: fff63c94ff757c24b960816e1d06fdb3, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Gros Virus - Move #2'
+    clip: {fileID: 8300000, guid: d7fd3f3cd77d713408e7281f3513e62b, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Gros Virus - Death #1'
+    clip: {fileID: 8300000, guid: 44dfb22a37594294e8f1d5277b9a30a6, type: 3}
+    delay: 0
+    volume: 1
+  - name: 'Gros Virus - Death #2'
+    clip: {fileID: 8300000, guid: 71beaab9a6409e74681693624d7c4639, type: 3}
+    delay: 0
+    volume: 1
+  source: {fileID: 1209265165558649695}

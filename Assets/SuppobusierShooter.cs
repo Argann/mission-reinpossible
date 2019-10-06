@@ -34,6 +34,8 @@ public class SuppobusierShooter : MonoBehaviour
         if (turret == null || TempoManager.beatNumber % turret.frequency != 0)
             return;
 
+        AudioComponent.PlayFX("Suppobusier");
+
         foreach (Vector3 aimedPosition in ((AimedTurret)turret.behaviour).positions)
         {    
             List<Squad> squads = SquadManager.GetSquadsAtPosition(aimedPosition);

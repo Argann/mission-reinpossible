@@ -12,6 +12,8 @@ public class Unit
     /// </summary>
     private int hp;
 
+    public UnitAsset.UnitType unitType;
+
     /// <summary>
     /// Propriété permettant d'accéder aux points de vie de l'unité
     /// </summary>
@@ -118,6 +120,7 @@ public class Unit
         this.maname = unit.maname;
         this.icon = unit.icon;
         this.prefab = unit.prefab;
+        this.unitType = unit.unitType;
     }
 
     public Unit(UnitAsset unitAsset, Vector3 position)
@@ -132,5 +135,6 @@ public class Unit
         this.maname = unitAsset.maname;
         this.icon = unitAsset.icon;
         this.prefab = unitAsset.prefab;
+        this.unitType = unitAsset.unitType;
     }
 }

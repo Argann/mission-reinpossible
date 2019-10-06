@@ -34,9 +34,19 @@ public static class MapManager
         // On instantie ensuite les chemins
         foreach (List<Vector3> path in map.paths)
         {
+            int i = 0;
             foreach (Vector3 position in path)
             {
-                GameObject.Instantiate(MainComponent.Instance.tile, Utils.ModelPositionToWorldPosition(position), Quaternion.identity);
+                if (i == path.Count - 1)
+                {
+                    GameObject.Instantiate(MainComponent.Instance.pylone, Utils.ModelPositionToWorldPosition(position), Quaternion.identity);
+                    GameObject.Instantiate(MainComponent.Instance.Rein, Utils.ModelPositionToWorldPosition(position), Quaternion.Euler(0, -150, 0));
+                }
+                else
+                {
+                    GameObject.Instantiate(MainComponent.Instance.tile, Utils.ModelPositionToWorldPosition(position), Quaternion.identity);
+                }
+                i++;
             }
         }
     }

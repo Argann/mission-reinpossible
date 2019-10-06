@@ -40,6 +40,8 @@ public class GunringueLineSpawner : MonoBehaviour
 
     public void AttackAnimation(GameEventPayload gepl)
     {
+        AudioComponent.PlayFX("Gunringue");
+        
         GameObject go = Instantiate(lineObject, Vector3.zero, Quaternion.identity);
 
         LineRenderer lineRenderer = go.GetComponent<LineRenderer>();
