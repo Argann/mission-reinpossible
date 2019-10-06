@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 4
   m_EditorClassIdentifier: 
   organHealth: 10
-  money: 50
+  money: 80
   gameEntities:
   - entityAsset: {fileID: 11400000, guid: 30aee7e06ebb0614a93acc3d3e1e6560, type: 2}
     startPosition: {x: -2, y: 0, z: 4}
