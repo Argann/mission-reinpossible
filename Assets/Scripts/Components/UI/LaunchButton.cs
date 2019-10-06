@@ -7,7 +7,13 @@ public class LaunchButton : MonoBehaviour
 {
     public GameObject content;
 
+    public static LaunchButton instance;
+
     public List<GameObject> objectsToDisable = new List<GameObject>();
+
+    void Awake() {
+        instance = this;
+    }
 
     public void ToGame() {
         if (SquadManager.inInventorySquads.Count == 0)
@@ -23,5 +29,19 @@ public class LaunchButton : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+    }
+
+
+    public static void ToShop() {
+        foreach(Button button in instance.content.GetComponentsInChildren<Button>(true)) {
+            button.gameObject.SetActive(!button.gameObject.activeInHierarchy);
+        }
+
+        foreach (var item in instance.objectsToDisable)
+        {
+            item.SetActive(true);
+        }
+
+        instance.gameObject.SetActive(true);
     }
 }

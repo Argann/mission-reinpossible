@@ -27,6 +27,6 @@ public class HealthBarPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        back.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.5f, 0));
+        back.transform.position = Camera.main.WorldToScreenPoint(transform.position - new Vector3(0, 0.5f, 0));
     }
 }

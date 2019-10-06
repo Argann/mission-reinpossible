@@ -67,6 +67,8 @@ public class MainComponent : MonoBehaviour
             TurretManager.AttackTurrets();
 
         });
+
+        ShopManager.InitializeShopManager();
     }
 
 

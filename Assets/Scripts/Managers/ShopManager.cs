@@ -70,6 +70,15 @@ public class ShopManager
     /// </summary>
     private static int currentCost = 0;
 
+    public static void InitializeShopManager() {
+        EventManager.OnNextLevel.AddListener(ResetUI);
+    }
+
+    public static void ResetUI(GameEventPayload gepl) {
+        LaunchButton.ToShop();
+        Money = money;
+    }
+
     public static int CurrentCost {
         get => currentCost;
 
@@ -88,6 +97,7 @@ public class ShopManager
         currentAmount = 0;
         currentCost = 0;
         currentPrice = 0;
+        currentUnit = null;
     }
 
     /// <summary>

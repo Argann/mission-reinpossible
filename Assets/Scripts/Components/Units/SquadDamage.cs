@@ -13,7 +13,7 @@ public class SquadDamage : MonoBehaviour
         squad = GetComponent<SquadComponent>().squad;
         hbp = GetComponent<HealthBarPosition>();
         maxHealth = SquadManager.GetSquadHealth(squad);
-        hbp.back.rectTransform.sizeDelta = new Vector2(10 + maxHealth / 5, 10);
+        hbp.back.rectTransform.sizeDelta = new Vector2(10 + maxHealth*.8f, 3);
     }
 
     void OnEnable()
