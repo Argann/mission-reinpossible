@@ -338,7 +338,7 @@ MonoBehaviour:
   TurretSuppobusier: {fileID: 4848535275313705296, guid: b45ff49d5856aea43953c844c517ad27,
     type: 3}
   modelToWorldScaleFactor: 2
-  startLevel: 0
+  startLevel: 1
   objectsToKeepBetweenLevels:
   - {fileID: 1335974057}
   - {fileID: 1067024836}
