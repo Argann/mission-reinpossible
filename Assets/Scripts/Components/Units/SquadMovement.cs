@@ -30,7 +30,7 @@ public class SquadMovement : MonoBehaviour
 
         if (s == squad && SquadManager.GetSquadHealth(squad) > 0)
         {
-            transform.DOMove(Utils.ModelPositionToWorldPosition(squad.Position), TempoManager.oneBeatEverySeconds / 1.5f);
+            transform.DOJump(Utils.ModelPositionToWorldPosition(squad.Position), 1, 1, TempoManager.oneBeatEverySeconds / 2.2f).SetEase(Ease.InOutSine);
         }
 
     }

@@ -18,4 +18,6 @@ public class UnitAsset : GameEntityAsset
     public string maname;
 
     public Sprite icon;
+
+    public GameObject prefab;
 }

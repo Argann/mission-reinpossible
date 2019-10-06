@@ -56,6 +56,7 @@ public class SquadManager
 
         GameObject squadGo = GameObject.Instantiate(MainComponent.Instance.Squad, Utils.ModelPositionToWorldPosition(squad.Position), Quaternion.identity);
         squadGo.GetComponent<SquadComponent>().squad = squad;
+        squadGo.GetComponent<SquadComponent>().CreateUnits();
     }
 
     /// <summary>

@@ -20,3 +20,4 @@ MonoBehaviour:
   priceFactor: 1.5
   maname: bloblob
   icon: {fileID: 21300000, guid: fcb440a65b3b1dd42950047396e95910, type: 3}
+  prefab: {fileID: 6562553175996018128, guid: eaca5750aca3c2a429dff60920354c2c, type: 3}

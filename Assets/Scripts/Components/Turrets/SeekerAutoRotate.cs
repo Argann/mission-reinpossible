@@ -31,6 +31,6 @@ public class SeekerAutoRotate : MonoBehaviour
 
         Vector3 targetPos = gepl.Get<Squad>("Squad").Position;
 
-        transform.DOLookAt(Utils.ModelPositionToWorldPosition(targetPos), TempoManager.oneBeatEverySeconds / 1.6f).SetEase(Ease.InOutBack);
+        transform.DOLookAt(Utils.ModelPositionToWorldPosition(targetPos), TempoManager.oneBeatEverySeconds / 2f).SetEase(Ease.InOutBack);
     }
 }
