@@ -15,8 +15,8 @@ MonoBehaviour:
   maxHP: 2
   damage: 2
   initialPrice: 1
-  moveSpeed: 1
-  stepPrice: 5
+  moveSpeed: 2
+  stepPrice: 3
   priceFactor: 1.5
   maname: bloblob
   icon: {fileID: 21300000, guid: fcb440a65b3b1dd42950047396e95910, type: 3}
