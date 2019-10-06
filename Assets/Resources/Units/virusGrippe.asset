@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHP: 2
   damage: 2
   initialPrice: 1
-  moveSpeed: 1
+  moveSpeed: 2
   stepPrice: 5
   priceFactor: 1.5
   maname: bloblob

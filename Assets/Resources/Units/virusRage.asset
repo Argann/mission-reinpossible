@@ -15,8 +15,8 @@ MonoBehaviour:
   maxHP: 1
   damage: 1
   initialPrice: 1
-  moveSpeed: 2
-  stepPrice: 5
+  moveSpeed: 3
+  stepPrice: 3
   priceFactor: 1.5
   maname: blebleb
   icon: {fileID: 21300000, guid: b74b7fde45909094cbbed725aa399c57, type: 3}
