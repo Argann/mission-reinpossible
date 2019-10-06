@@ -11,7 +11,8 @@ public class SuppobusierShooter : MonoBehaviour
 
     public GameObject spawner;
 
-    public GameObject particles;
+    public GameObject particlesTir;
+    public GameObject particlesSol;
 
     void Start()
     {
@@ -41,11 +42,11 @@ public class SuppobusierShooter : MonoBehaviour
 
             DOTween.Sequence()
                 .Append(
-                    ob.transform.DOJump(Utils.ModelPositionToWorldPosition(aimedPosition), 1, 1, TempoManager.oneBeatEverySeconds / 2f)
+                    ob.transform.DOJump(Utils.ModelPositionToWorldPosition(aimedPosition), 3, 1, TempoManager.oneBeatEverySeconds / 2f).SetEase(Ease.InSine)
                 )
                 .AppendCallback(() => {
                     Destroy(ob);
-                    Instantiate(particles, Utils.ModelPositionToWorldPosition(aimedPosition), Quaternion.Euler(90,0,0));
+                    Instantiate(particlesSol, Utils.ModelPositionToWorldPosition(aimedPosition), Quaternion.Euler(90,0,0));
                 })
                 .Play();
         }

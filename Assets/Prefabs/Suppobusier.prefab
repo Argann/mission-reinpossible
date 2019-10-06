@@ -140,7 +140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obus: {fileID: 6208947830624669897, guid: daf23164c38f437489a431b2e4593e62, type: 3}
   spawner: {fileID: 9059636579738868607}
-  particles: {fileID: 3697400550796724222, guid: 702b087b875b29e46a34651d49f36d5e,
+  particlesTir: {fileID: 3277093522697132005, guid: 6efb8a9f19bf01f49a3c76391b6e0101,
+    type: 3}
+  particlesSol: {fileID: 3697400550796724222, guid: 702b087b875b29e46a34651d49f36d5e,
     type: 3}
 --- !u!111 &5047708400444947134
 Animation:
