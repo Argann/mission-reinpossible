@@ -82,5 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da192403d4f5aa43aaa0972d2073b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Healthbar: {fileID: 2880367479934864666, guid: d8be6f071334968458a85e288599b96c,
+  UnitNumber: {fileID: 397942675063952967, guid: 2fd1f8c33ffecc340bbf8d54a4961ec0,
     type: 3}
+  offset: {x: 1.35, y: -0.5, z: 0.8}
+  instance: {fileID: 0}
