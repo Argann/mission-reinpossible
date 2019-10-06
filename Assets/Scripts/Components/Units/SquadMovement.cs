@@ -30,6 +30,7 @@ public class SquadMovement : MonoBehaviour
 
         if (s == squad && SquadManager.GetSquadHealth(squad) > 0)
         {
+            AudioComponent.PlayUnitMove(s.units[0]);
             transform.DOJump(Utils.ModelPositionToWorldPosition(squad.Position), 1, 1, TempoManager.oneBeatEverySeconds / 2.2f).SetEase(Ease.InOutSine);
         }
 

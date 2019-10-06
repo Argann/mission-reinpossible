@@ -49,12 +49,17 @@ public class MainComponent : MonoBehaviour
     [Header("Objects to keep")]
     public List<GameObject> objectsToKeepBetweenLevels;
 
+    public bool isFirstBeat = true;
+
     /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
     /// du composant
     /// </summary>
     void Awake()
     {
+        // Et on lance le tempo !
+        TempoManager.StartBeat();
+        
         startLevel--;
         NextGame();
 
@@ -62,6 +67,12 @@ public class MainComponent : MonoBehaviour
         EventManager.OnOrganDeath.AddListener(NextGame);
 
         EventManager.OnTempoBeat.AddListener(_ => {
+
+            if (isFirstBeat)
+            {
+                isFirstBeat = false;
+                AudioComponent.Instance.source.Play();
+            }
 
             SquadManager.MoveSquads();
             TurretManager.AttackTurrets();
@@ -125,15 +136,5 @@ public class MainComponent : MonoBehaviour
         {
             EventManager.OnGameOver.Invoke(new GameEventPayload());
         }
-    }
-
-    void OnEnable()
-    {
-        TempoManager.StartBeat();
-    }
-
-    void OnDisable()
-    {
-        TempoManager.StopBeat();
     }
 }

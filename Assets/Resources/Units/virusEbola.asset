@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b26106adbe89b499878d420ff1a7b3, type: 3}
   m_Name: virusEbola
   m_EditorClassIdentifier: 
+  unitType: 2
   maxHP: 4
   damage: 3
   initialPrice: 3

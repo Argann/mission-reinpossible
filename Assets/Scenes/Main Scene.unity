@@ -261,7 +261,7 @@ MonoBehaviour:
   TurretSuppobusier: {fileID: 4848535275313705296, guid: b45ff49d5856aea43953c844c517ad27,
     type: 3}
   modelToWorldScaleFactor: 2
-  startLevel: 3
+  startLevel: 0
   objectsToKeepBetweenLevels:
   - {fileID: 1335974057}
   - {fileID: 1067024836}
@@ -356,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 94348023254579406, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000091552734
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 94348022038611686, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
@@ -516,6 +516,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209265165558649695, guid: 59070e20ff824774381431ab5f4eefee,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bd7398a4ffb19b438557f83b5d52155, type: 3}
+    - target: {fileID: 1209265165558649695, guid: 59070e20ff824774381431ab5f4eefee,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318876923979271121, guid: 59070e20ff824774381431ab5f4eefee,
+        type: 3}
+      propertyPath: elements.Array.data[0].volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59070e20ff824774381431ab5f4eefee, type: 3}

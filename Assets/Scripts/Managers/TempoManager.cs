@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,11 +17,12 @@ public static class TempoManager
     /// <summary>
     /// Fréquence de battements, en secondes
     /// </summary>
-    public static float oneBeatEverySeconds = 1f;
+    public static float oneBeatEverySeconds = .9756f;
+
+    public static Sequence tempoSequence;
 
     public static void Reset()
     {
-        StopBeat();
         beatNumber = 0;
     }
 
@@ -29,33 +31,19 @@ public static class TempoManager
     /// </summary>
     public static void StartBeat()
     {
-        MainComponent.Instance.StartCoroutine(TempoCoroutine());
-    }
+        tempoSequence = DOTween.Sequence()
+            .AppendInterval(oneBeatEverySeconds)
+            .AppendCallback(
+                () => {
+                    EventManager.OnTempoBeat.Invoke(new GameEventPayload(){
+                        {"BeatNumber", beatNumber}
+                    });
 
-    /// <summary>
-    /// Méthode permettant de stopper le système de battements du jeu
-    /// </summary>
-    public static void StopBeat()
-    {
-        MainComponent.Instance.StopCoroutine(TempoCoroutine());
-    }
-
-    /// <summary>
-    /// Coroutine de battement
-    /// </summary>
-    /// <returns></returns>
-    private static IEnumerator TempoCoroutine()
-    {
-        while (true)
-        {
-            EventManager.OnTempoBeat.Invoke(new GameEventPayload(){
-                {"BeatNumber", beatNumber}
-            });
-
-            beatNumber++;
-
-            yield return new WaitForSeconds(oneBeatEverySeconds);
-        }
+                    beatNumber++;
+                }
+            )
+            .SetLoops(-1)
+            .Play();
     }
     
 }

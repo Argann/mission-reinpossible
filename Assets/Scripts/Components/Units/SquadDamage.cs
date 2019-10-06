@@ -39,6 +39,7 @@ public class SquadDamage : MonoBehaviour
     {
         if (gepl.Get<Squad>("Squad") == squad)
         {
+            AudioComponent.PlayUnitDeath(squad.units[0]);
             Destroy(gameObject, TempoManager.oneBeatEverySeconds / 2f);
             Destroy(hbp.instance);
         }

@@ -36,18 +36,22 @@ public class TurretMarteauAnimation : MonoBehaviour
 
         if (TempoManager.beatNumber % turret.frequency == 0)
         {
+            AudioComponent.PlayFX("Marteau - Stomp");
+
             DOTween.Sequence()
                 .Append(
-                    bras.transform.DOLocalRotate(new Vector3(90, 0, 0), TempoManager.oneBeatEverySeconds / 1.9f).SetEase(Ease.InOutBack)
+                    bras.transform.DOLocalRotate(new Vector3(90, 0, 0), TempoManager.oneBeatEverySeconds / 2f).SetEase(Ease.InOutBack)
                 )
-                .InsertCallback((TempoManager.oneBeatEverySeconds / 1.9f) - .2f, () => {
+                .InsertCallback((TempoManager.oneBeatEverySeconds / 2) - .2f, () => {
                     GameObject.Instantiate(particules, particuleSpawner.transform.position, Quaternion.Euler(90, 0,0));
                 });
             
         }
         else
         {
-            bras.transform.DOLocalRotate(new Vector3(0, 0, 0), TempoManager.oneBeatEverySeconds / 1.9f).SetEase(Ease.OutBack);
+            AudioComponent.PlayFX("Marteau - Charge");
+
+            bras.transform.DOLocalRotate(new Vector3(0, 0, 0), TempoManager.oneBeatEverySeconds / 2).SetEase(Ease.OutBack);
         }
     }
 }
