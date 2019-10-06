@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e8af2b8c7c3d1b845b9097da6373b577, type: 2}
@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_ReflectionBounces: 3
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1.0893786, g: 0.6870411, b: 0.6813182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,7 +96,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: bf4e0164ef21472439adcffcfd7c0606,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -215,7 +216,7 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1003569817504194948, guid: 59070e20ff824774381431ab5f4eefee,
     type: 3}
-  m_PrefabInstance: {fileID: 1003569818315880749}
+  m_PrefabInstance: {fileID: 3638474616350836142}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1433552824 stripped
 GameObject:
@@ -261,7 +262,7 @@ MonoBehaviour:
   TurretSuppobusier: {fileID: 4848535275313705296, guid: b45ff49d5856aea43953c844c517ad27,
     type: 3}
   modelToWorldScaleFactor: 2
-  startLevel: 0
+  startLevel: 1
   objectsToKeepBetweenLevels:
   - {fileID: 1335974057}
   - {fileID: 1067024836}
@@ -279,7 +280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2016305768
 PrefabInstance:
@@ -331,7 +332,7 @@ PrefabInstance:
     - target: {fileID: 94348022474031974, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 94348022474031974, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
@@ -356,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 94348023254579406, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030517578
+      value: -0.00003665763
       objectReference: {fileID: 0}
     - target: {fileID: 94348023301107236, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
@@ -443,14 +444,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 94348022038611686, guid: e5d154e916dda824886302c4c25b1f4e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d154e916dda824886302c4c25b1f4e, type: 3}
---- !u!1001 &1003569818315880749
+--- !u!1001 &3638474616350836142
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -516,21 +512,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1209265165558649695, guid: 59070e20ff824774381431ab5f4eefee,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 7bd7398a4ffb19b438557f83b5d52155, type: 3}
-    - target: {fileID: 1209265165558649695, guid: 59070e20ff824774381431ab5f4eefee,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318876923979271121, guid: 59070e20ff824774381431ab5f4eefee,
-        type: 3}
-      propertyPath: elements.Array.data[0].volume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59070e20ff824774381431ab5f4eefee, type: 3}
