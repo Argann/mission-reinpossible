@@ -41,7 +41,8 @@ public class SquadDamage : MonoBehaviour
         {
             AudioComponent.PlayUnitDeath(squad.units[0]);
             Destroy(gameObject, TempoManager.oneBeatEverySeconds / 2f);
-            Destroy(hbp.instance);
+            if (hbp != null)
+                Destroy(hbp.instance);
         }
     }
 }
