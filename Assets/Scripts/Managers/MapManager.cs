@@ -72,9 +72,14 @@ public static class MapManager
     /// Methode permettant de récupérer le GameEntity situé à
     /// la position donnée en paramètre
     /// </summary>
-    public static GameEntity GetEntityAtPosition(Vector3 position)
+    public static List<GameEntity> GetEntitiesAtPosition(Vector3 position)
     {
-        return map.gameEntities.Find(_ => _.Position == position);
+        return map.gameEntities.FindAll(_ => _.Position == position);
+    }
+
+    public static List<GameEntity> GetEntitiesAtPositions(List<Vector3> positions)
+    {
+        return map.gameEntities.FindAll(_ => positions.Contains(_.Position));
     }
 
     public static bool IsEndOfPath(Vector3 position)

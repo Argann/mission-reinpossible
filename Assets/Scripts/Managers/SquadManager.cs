@@ -211,9 +211,9 @@ public class SquadManager
         return unitAssets;
     }
 
-    public static Squad GetSquadAtPosition(Vector3 position)
+    public static List<Squad> GetSquadsAtPosition(Vector3 position)
     {
-        return inGameSquads.Find(_ => _.Position == position);
+        return inGameSquads.FindAll(_ => _.Position == position);
     }
 
     public static Squad GetFurthestSquad()
