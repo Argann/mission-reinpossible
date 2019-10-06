@@ -15,12 +15,16 @@ public class HealthBarPosition : MonoBehaviour
     void Awake()
     {
         instance = Instantiate(UnitNumber, FindObjectOfType<Canvas>().transform);
-        EventManager.OnNextLevel.AddListener(_ => Destroy(instance));
+        EventManager.OnNextLevel.AddListener(_ => {
+            Destroy(instance);
+            Destroy(this);
+        });
     }
 
     // Update is called once per frame
     void Update()
     {
-        instance.transform.position = Camera.main.WorldToScreenPoint(transform.position + offset);
+        if(instance != null)
+            instance.transform.position = Camera.main.WorldToScreenPoint(transform.position + offset);
     }
 }
