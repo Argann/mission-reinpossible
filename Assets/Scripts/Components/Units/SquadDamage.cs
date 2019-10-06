@@ -1,19 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SquadDamage : MonoBehaviour
 {
     private Squad squad;
     private HealthBarPosition hbp;
-    private int maxHealth;
 
     void Start()
     {
         squad = GetComponent<SquadComponent>().squad;
         hbp = GetComponent<HealthBarPosition>();
-        maxHealth = SquadManager.GetSquadHealth(squad);
-        hbp.back.rectTransform.sizeDelta = new Vector2(10 + maxHealth*.8f, 3);
+        hbp.instance.GetComponent<Text>().text = squad.units.Count + "";
     }
 
     void OnEnable()
@@ -32,7 +31,7 @@ public class SquadDamage : MonoBehaviour
     {
         if (gepl.Get<Squad>("Squad") == squad)
         {
-            hbp.fill.fillAmount = (float)(SquadManager.GetSquadHealth(squad)) / (float)(maxHealth);
+            hbp.instance.GetComponent<Text>().text = squad.units.Count + "";
         }
     }
 
