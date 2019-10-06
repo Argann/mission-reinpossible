@@ -28,6 +28,9 @@ public class OrganHealthVisualizer : MonoBehaviour
 
     void ProcessOrganHit(GameEventPayload _)
     {
+        if (text == null)  
+            return;
+            
         text.text = $"Organ life : {OrganManager.HP}";
     }
 }

@@ -93,6 +93,19 @@ public class MainComponent : MonoBehaviour
         EventManager.OnNextLevel.Invoke(new GameEventPayload());
     }
 
+    public void ResetGame()
+    {
+        startLevel = 0;
+        startLevel--;
+        NextGame();
+    }
+
+    public void ResetLevel()
+    {
+        startLevel--;
+        NextGame();
+    }
+
     public void ClearScene()
     {
         GameObject[] rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
