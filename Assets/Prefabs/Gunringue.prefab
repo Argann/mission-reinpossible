@@ -79,6 +79,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1490037225770813653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7590977681101600798}
+  m_Layer: 0
+  m_Name: Shot Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7590977681101600798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490037225770813653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.27, z: 0.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3507040689762328666}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6925568634863410965
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +120,7 @@ GameObject:
   - component: {fileID: 6925568634863410960}
   - component: {fileID: 6925568634863410967}
   - component: {fileID: 6925568634863410966}
+  - component: {fileID: 3386901361756503484}
   - component: {fileID: 4752271120964065356}
   - component: {fileID: -932682632166882949}
   m_Layer: 0
@@ -139,6 +170,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationObject: {fileID: 7607242040522011988}
+--- !u!114 &3386901361756503484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925568634863410965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb771ba4a87e02145b479f1bef2655fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineObject: {fileID: 5643215170794865498, guid: 9f2b72c4d9a9edd44921151c37610c47,
+    type: 3}
+  particles: {fileID: 2128683261640250666, guid: 18cca73b601dcc54eabee8c61007bb39,
+    type: 3}
+  spawner: {fileID: 1490037225770813653}
+  noise: 0.1
 --- !u!111 &4752271120964065356
 Animation:
   m_ObjectHideFlags: 0
@@ -201,7 +250,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0.53103036}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7590977681101600798}
   m_Father: {fileID: 2694906523138366295}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

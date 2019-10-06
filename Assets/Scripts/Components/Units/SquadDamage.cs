@@ -40,8 +40,8 @@ public class SquadDamage : MonoBehaviour
     {
         if (gepl.Get<Squad>("Squad") == squad)
         {
+            Destroy(gameObject, TempoManager.oneBeatEverySeconds / 2f);
             Destroy(hbp.instance);
-            Destroy(gameObject);
         }
     }
 }

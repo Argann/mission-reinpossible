@@ -121,7 +121,7 @@ public class MainComponent : MonoBehaviour
 
     void CheckGameOver(GameEventPayload gepl)
     {
-        if (SquadManager.inGameSquads.Count == 0)
+        if (SquadManager.inGameSquads.Count == 0 && SquadManager.inInventorySquads.Count == 0)
         {
             EventManager.OnGameOver.Invoke(new GameEventPayload());
         }

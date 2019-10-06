@@ -105,6 +105,8 @@ public class Unit
     /// </summary>
     public Sprite icon;
 
+    public GameObject prefab;
+
     public Unit(Unit unit) {
         this.HP = unit.HP;
         this.Position = unit.Position;
@@ -115,6 +117,7 @@ public class Unit
         this.priceFactor = unit.priceFactor;
         this.maname = unit.maname;
         this.icon = unit.icon;
+        this.prefab = unit.prefab;
     }
 
     public Unit(UnitAsset unitAsset, Vector3 position)
@@ -128,5 +131,6 @@ public class Unit
         this.priceFactor = unitAsset.priceFactor;
         this.maname = unitAsset.maname;
         this.icon = unitAsset.icon;
+        this.prefab = unitAsset.prefab;
     }
 }
