@@ -4,6 +4,16 @@
 public static class EventManager
 {
     /// <summary>
+    /// Evenement invoqué lors d'un GameOver !
+    /// </summary>
+    public static GameEvent OnGameOver = new GameEvent();
+
+    /// <summary>
+    /// Evenement appelé lorsqu'on passe à un nouveau niveau
+    /// </summary>
+    public static GameEvent OnNextLevel = new GameEvent();
+
+    /// <summary>
     /// Evenement invoqué lorsqu'un battement de jeu
     /// survient.
     /// 

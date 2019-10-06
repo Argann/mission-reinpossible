@@ -13,6 +13,11 @@ public class TurretManager
     /// </summary>
     public static List<Turret> inGameTurrets = new List<Turret>();
 
+    public static void Reset()
+    {
+        inGameTurrets = new List<Turret>();
+    }
+
     /// <summary>
     /// Méthode permettant d'envoyer les évènements d'attaques 
     /// à toutes les tourelles
@@ -47,8 +52,7 @@ public class TurretManager
             GameObject.Instantiate(
                 MainComponent.Instance.tile, 
                 Utils.ModelPositionToWorldPosition(turret.Position), 
-                Quaternion.identity, 
-                MainComponent.Instance.mapContainer.transform
+                Quaternion.identity
                 );
         }
         else if (turret.turretType == Turret.TurretType.Gunringue)
@@ -66,8 +70,7 @@ public class TurretManager
             GameObject.Instantiate(
                 MainComponent.Instance.tile, 
                 Utils.ModelPositionToWorldPosition(turret.Position), 
-                Quaternion.identity, 
-                MainComponent.Instance.mapContainer.transform
+                Quaternion.identity
                 );
         }
         else if (turret.turretType == Turret.TurretType.Suppobusier)
@@ -85,18 +88,9 @@ public class TurretManager
             GameObject.Instantiate(
                 MainComponent.Instance.tile, 
                 Utils.ModelPositionToWorldPosition(turret.Position), 
-                Quaternion.identity, 
-                MainComponent.Instance.mapContainer.transform
+                Quaternion.identity
                 );
         }
-    }
-
-    /// <summary>
-    /// Méthode permettant de générer une liste d'entité
-    /// </summary>
-    public static void ClearTurrets()
-    {
-        inGameTurrets = new List<Turret>();
     }
 
     /// <summary>

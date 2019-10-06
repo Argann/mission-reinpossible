@@ -2,6 +2,11 @@ public static class OrganManager
 {
     private static int hp = 10;
 
+    public static void Reset()
+    {
+        hp = 999;
+    }
+
     public static int HP {
         get => hp;
         set {

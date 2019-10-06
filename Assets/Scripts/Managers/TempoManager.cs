@@ -18,6 +18,12 @@ public static class TempoManager
     /// </summary>
     public static float oneBeatEverySeconds = 1f;
 
+    public static void Reset()
+    {
+        StopBeat();
+        beatNumber = 0;
+    }
+
     /// <summary>
     /// Méthode permettant de lancer le système de battements du jeu
     /// </summary>

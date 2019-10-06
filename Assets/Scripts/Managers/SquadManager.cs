@@ -18,6 +18,12 @@ public class SquadManager
     /// </summary>
     public static List<Squad> inInventorySquads = new List<Squad>();
 
+    public static void Reset()
+    {
+        inGameSquads = new List<Squad>();
+        inInventorySquads = new List<Squad>();
+    }
+
     /// <summary>
     /// Méthode permettant d'acheter des unités pour les ajouter dans une escouade
     /// </summary>

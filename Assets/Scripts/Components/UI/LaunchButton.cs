@@ -21,6 +21,7 @@ public class LaunchButton : MonoBehaviour
         {
             item.SetActive(false);
         }
-        Destroy(gameObject);
+
+        gameObject.SetActive(false);
     }
 }

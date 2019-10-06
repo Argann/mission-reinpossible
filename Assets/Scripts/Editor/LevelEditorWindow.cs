@@ -68,7 +68,7 @@ public class LevelEditorWindow : EditorWindow
 
         if (GUILayout.Button("Supprimer test"))
         {
-            MapManager.EmptyMapObjects();
+            MainComponent.Instance.ClearScene();
         }
 
         EditorGUILayout.EndHorizontal();

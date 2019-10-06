@@ -15,6 +15,11 @@ public static class MapManager
     /// </summary>
     public static GameMap map = new GameMap();
 
+    public static void Reset()
+    {
+        map = new GameMap();
+    }
+
     /// <summary>
     /// Méthode permettant de générer les chemins du niveau
     /// </summary>
@@ -31,7 +36,7 @@ public static class MapManager
         {
             foreach (Vector3 position in path)
             {
-                GameObject.Instantiate(MainComponent.Instance.tile, Utils.ModelPositionToWorldPosition(position), Quaternion.identity, MainComponent.Instance.mapContainer.transform);
+                GameObject.Instantiate(MainComponent.Instance.tile, Utils.ModelPositionToWorldPosition(position), Quaternion.identity);
             }
         }
     }
@@ -50,24 +55,6 @@ public static class MapManager
             if (entity is Turret turret)
             {
                 TurretManager.AddTurret(turret);
-            }
-        }
-    }
-
-    /// <summary>
-    /// Méthode permettant de supprimer tous les objets représentant la carte
-    /// </summary>
-    public static void EmptyMapObjects()
-    {
-        foreach (Transform child in MainComponent.Instance.mapContainer.transform)
-        {
-            if (Application.isPlaying)
-            {
-                GameObject.Destroy(child.gameObject);
-            }
-            else
-            {
-                GameObject.DestroyImmediate(child.gameObject);
             }
         }
     }
