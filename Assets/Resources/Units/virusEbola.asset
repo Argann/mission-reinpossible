@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b26106adbe89b499878d420ff1a7b3, type: 3}
   m_Name: virusEbola
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 4
   damage: 3
   initialPrice: 3
   moveSpeed: 1
   stepPrice: 5
-  priceFactor: 1.1
+  priceFactor: 1.5
   maname: bliblib
   icon: {fileID: 21300000, guid: e69eff29ff4f163458615a235fd37abd, type: 3}
   prefab: {fileID: 7238082039373200391, guid: 51a3d662643af144d81093c6655b96a2, type: 3}

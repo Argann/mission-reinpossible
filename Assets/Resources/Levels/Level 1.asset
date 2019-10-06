@@ -16,7 +16,7 @@ MonoBehaviour:
   money: 50
   gameEntities:
   - entityAsset: {fileID: 11400000, guid: 6615bb1b052370648ad72a653095c716, type: 2}
-    startPosition: {x: 2, y: 0, z: 5}
+    startPosition: {x: 3, y: 0, z: 6}
     startRotation: {x: 0, y: 0, z: 0}
     aimPositions: []
   paths:
