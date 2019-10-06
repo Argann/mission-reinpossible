@@ -20,3 +20,4 @@ MonoBehaviour:
   priceFactor: 1.1
   maname: bliblib
   icon: {fileID: 21300000, guid: e69eff29ff4f163458615a235fd37abd, type: 3}
+  prefab: {fileID: 7238082039373200391, guid: 51a3d662643af144d81093c6655b96a2, type: 3}
