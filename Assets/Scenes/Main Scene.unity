@@ -264,7 +264,7 @@ MonoBehaviour:
     type: 3}
   Rein: {fileID: 1248038186699444675, guid: fd2b1d1f6ae0e0e4cb1ed022a4196e6d, type: 3}
   modelToWorldScaleFactor: 2
-  startLevel: 0
+  startLevel: 2
   objectsToKeepBetweenLevels:
   - {fileID: 1335974057}
   - {fileID: 1067024836}
@@ -362,11 +362,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.000030517578
       objectReference: {fileID: 0}
-    - target: {fileID: 94348022038611686, guid: e5d154e916dda824886302c4c25b1f4e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 94348023301107236, guid: e5d154e916dda824886302c4c25b1f4e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -451,6 +446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 94348022038611686, guid: e5d154e916dda824886302c4c25b1f4e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d154e916dda824886302c4c25b1f4e, type: 3}

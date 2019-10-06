@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 151dd00f4d7bcc94ab2099f5590d654d, type: 3}
-  m_Name: Level 4
+  m_Name: Level 6
   m_EditorClassIdentifier: 
   organHealth: 10
-  money: 80
+  money: 70
   gameEntities:
   - entityAsset: {fileID: 11400000, guid: 30aee7e06ebb0614a93acc3d3e1e6560, type: 2}
     startPosition: {x: -2, y: 0, z: 4}
@@ -39,4 +39,4 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 6}
     - {x: 0, y: 0, z: 7}
     - {x: 0, y: 0, z: 8}
-    - {x: 0, y: 0, z: 9}
+    - {x: 0, y: 0, z: 10}
