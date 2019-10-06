@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &639277600339719998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534633923823576779}
+  m_Layer: 0
+  m_Name: Spawn Particules
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534633923823576779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639277600339719998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -5.14, z: 1.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1223104119616069473}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2547839388544737794
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bras: {fileID: 4109809768245815909}
+  particules: {fileID: 3697400550796724222, guid: 702b087b875b29e46a34651d49f36d5e,
+    type: 3}
+  particuleSpawner: {fileID: 639277600339719998}
 --- !u!1001 &4451292364433395652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,6 +169,12 @@ Transform:
 --- !u!1 &4109809768245815909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8876928120921332319, guid: 472c311e56759e6429190a688bdd9d6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4451292364433395652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1223104119616069473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3260461429018218661, guid: 472c311e56759e6429190a688bdd9d6c,
     type: 3}
   m_PrefabInstance: {fileID: 4451292364433395652}
   m_PrefabAsset: {fileID: 0}

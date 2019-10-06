@@ -47,7 +47,7 @@ public class MainComponent : MonoBehaviour
     [Header("Variables")]
     public float modelToWorldScaleFactor;
 
-    public int level;
+    public int startLevel;
 
     /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
@@ -55,8 +55,20 @@ public class MainComponent : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        startLevel--;
+        NextGame();
+
+        EventManager.OnSquadDeath.AddListener(CheckGameOver);
+        EventManager.OnOrganDeath.AddListener(NextGame);
+    }
+
+    void NextGame(GameEventPayload gepl = null)
+    {
+        startLevel++;
+
+        // TODO : Reset tous le modèle avant de charger le niveau suivant
         MapManager.EmptyMapObjects();
-        LevelManager.LoadLevel(level);
+        LevelManager.LoadLevel(startLevel);
 
         EventManager.OnTempoBeat.AddListener(_ => {
 
@@ -64,6 +76,14 @@ public class MainComponent : MonoBehaviour
             TurretManager.AttackTurrets();
 
         });
+    }
+
+    void CheckGameOver(GameEventPayload gepl)
+    {
+        if (SquadManager.inGameSquads.Count == 0)
+        {
+            EventManager.OnGameOver.Invoke(new GameEventPayload());
+        }
     }
 
     void OnEnable()
