@@ -19,6 +19,11 @@ MonoBehaviour:
     startPosition: {x: 2, y: 0, z: 5}
     startRotation: {x: 0, y: 0, z: 0}
     aimPositions: []
+  - entityAsset: {fileID: 11400000, guid: 30aee7e06ebb0614a93acc3d3e1e6560, type: 2}
+    startPosition: {x: 5, y: 0, z: 5}
+    startRotation: {x: 0, y: -135, z: 0}
+    aimPositions:
+    - {x: 1, y: 0, z: 2}
   paths:
   - path:
     - {x: 0, y: 0, z: 0}

@@ -33,9 +33,9 @@ public class AimedTurret : TurretBehaviour
 
         foreach (Vector3 position in positions)
         {
-            Squad squad = SquadManager.GetSquadAtPosition(position) as Squad;
+            List<Squad> squad = SquadManager.GetSquadsAtPosition(position);
 
-            if (squad != null)
+            if (squad != null && squad.Count > 0)
             {
                 EventManager.OnTurretAttack.Invoke(new GameEventPayload()
                 {
@@ -44,11 +44,17 @@ public class AimedTurret : TurretBehaviour
                 });
                 if (turret.multipleAttack)
                 {
-                    SquadManager.DamageSplashSquad(squad, turret.damage);
+                    foreach (Squad sq in squad)
+                    {
+                        SquadManager.DamageSplashSquad(sq, turret.damage);
+                    }
                 }
                 else
                 {
-                    SquadManager.DamageSquad(squad, turret.damage);
+                    foreach (Squad sq in squad)
+                    {
+                        SquadManager.DamageSquad(sq, turret.damage);
+                    }
                 }
             }
         }
