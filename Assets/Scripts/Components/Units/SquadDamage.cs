@@ -5,10 +5,15 @@ using UnityEngine;
 public class SquadDamage : MonoBehaviour
 {
     private Squad squad;
+    private HealthBarPosition hbp;
+    private int maxHealth;
 
     void Start()
     {
         squad = GetComponent<SquadComponent>().squad;
+        hbp = GetComponent<HealthBarPosition>();
+        maxHealth = SquadManager.GetSquadHealth(squad);
+        hbp.back.rectTransform.sizeDelta = new Vector2(10 + maxHealth / 5, 10);
     }
 
     void OnEnable()
@@ -27,7 +32,7 @@ public class SquadDamage : MonoBehaviour
     {
         if (gepl.Get<Squad>("Squad") == squad)
         {
-            // TODO
+            hbp.fill.fillAmount = (float)(SquadManager.GetSquadHealth(squad)) / (float)(maxHealth);
         }
     }
 
@@ -35,6 +40,7 @@ public class SquadDamage : MonoBehaviour
     {
         if (gepl.Get<Squad>("Squad") == squad)
         {
+            Destroy(hbp.instance);
             Destroy(gameObject);
         }
     }
