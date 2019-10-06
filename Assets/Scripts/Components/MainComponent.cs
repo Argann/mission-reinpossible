@@ -30,6 +30,8 @@ public class MainComponent : MonoBehaviour
     [Tooltip("Quel est le préfab représentant une tuile de jeu ?")]
     public GameObject tile;
 
+    public GameObject pylone;
+
     /// <summary>
     /// Prefab représentant une squad
     /// </summary>
@@ -40,6 +42,8 @@ public class MainComponent : MonoBehaviour
     public GameObject TurretGunringue;
 
     public GameObject TurretSuppobusier;
+
+    public GameObject Rein;
 
     [Header("Variables")]
     public float modelToWorldScaleFactor;
@@ -59,7 +63,7 @@ public class MainComponent : MonoBehaviour
     {
         // Et on lance le tempo !
         TempoManager.StartBeat();
-        
+
         startLevel--;
         NextGame();
 

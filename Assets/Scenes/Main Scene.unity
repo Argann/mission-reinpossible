@@ -254,6 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 1291820669760209372, guid: 1ce1af449e3d5924b8a6f440052cac97, type: 3}
+  pylone: {fileID: 2873860131926763042, guid: 319fd13584871bc44840aa8db9a097ee, type: 3}
   Squad: {fileID: 1874799081325070014, guid: 1387ef963220acc4fb9e1009f6cbaa70, type: 3}
   TurretMarteau: {fileID: 2547839388544737794, guid: 0054b06dbb47d944eb5b6e2e827c2d8f,
     type: 3}
@@ -261,6 +262,7 @@ MonoBehaviour:
     type: 3}
   TurretSuppobusier: {fileID: 4848535275313705296, guid: b45ff49d5856aea43953c844c517ad27,
     type: 3}
+  Rein: {fileID: 1248038186699444675, guid: fd2b1d1f6ae0e0e4cb1ed022a4196e6d, type: 3}
   modelToWorldScaleFactor: 2
   startLevel: 0
   objectsToKeepBetweenLevels:
