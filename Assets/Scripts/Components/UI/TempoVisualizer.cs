@@ -19,12 +19,14 @@ public class TempoVisualizer : MonoBehaviour
     void OnEnable()
     {
         EventManager.OnTempoBeat.AddListener(ProcessTempoEvent);
+        EventManager.OnNextLevel.AddListener(ProcessNextLevel);
     }
 
     // Méthode appelée lors de la désactivation du composant
     void OnDisable()
     {
         EventManager.OnTempoBeat.RemoveListener(ProcessTempoEvent);
+        EventManager.OnNextLevel.RemoveListener(ProcessNextLevel);
     }
 
     void ProcessTempoEvent(GameEventPayload _)
@@ -37,5 +39,10 @@ public class TempoVisualizer : MonoBehaviour
         {
             image.color = Color.black;
         }
+    }
+
+    void ProcessNextLevel(GameEventPayload _)
+    {
+        Debug.Log("New level !");
     }
 }

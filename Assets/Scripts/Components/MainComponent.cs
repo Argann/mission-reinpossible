@@ -23,9 +23,6 @@ public class MainComponent : MonoBehaviour
         }
     }
 
-    [Header("Containers")]
-    public GameObject mapContainer;
-
     /// <summary>
     /// Préfab représentant une tuile de jeu
     /// </summary>
@@ -49,6 +46,9 @@ public class MainComponent : MonoBehaviour
 
     public int startLevel;
 
+    [Header("Objects to keep")]
+    public List<GameObject> objectsToKeepBetweenLevels;
+
     /// <summary>
     /// Méthode appelée automatiquement par Unity au lancement
     /// du composant
@@ -60,15 +60,6 @@ public class MainComponent : MonoBehaviour
 
         EventManager.OnSquadDeath.AddListener(CheckGameOver);
         EventManager.OnOrganDeath.AddListener(NextGame);
-    }
-
-    void NextGame(GameEventPayload gepl = null)
-    {
-        startLevel++;
-
-        // TODO : Reset tous le modèle avant de charger le niveau suivant
-        MapManager.EmptyMapObjects();
-        LevelManager.LoadLevel(startLevel);
 
         EventManager.OnTempoBeat.AddListener(_ => {
 
@@ -76,6 +67,41 @@ public class MainComponent : MonoBehaviour
             TurretManager.AttackTurrets();
 
         });
+    }
+
+
+    void NextGame(GameEventPayload gepl = null)
+    {
+        // On passe au numéro de niveau suivant
+        startLevel++;
+
+        // On réinitialise le modèle
+        MapManager.Reset();
+        OrganManager.Reset();
+        ShopManager.Reset();
+        SquadManager.Reset();
+        TempoManager.Reset();
+        TurretManager.Reset();
+
+        // On vide la scène
+        MainComponent.Instance.ClearScene();
+
+        // Puis on charge le bon niveau
+        LevelManager.LoadLevel(startLevel);
+
+        // Et on lance l'évènement de nouvelle vague
+        EventManager.OnNextLevel.Invoke(new GameEventPayload());
+    }
+
+    public void ClearScene()
+    {
+        GameObject[] rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+
+        foreach (GameObject obj in rootObjects)
+        {
+            if (!objectsToKeepBetweenLevels.Contains(obj))
+                Destroy(obj);
+        }
     }
 
     void CheckGameOver(GameEventPayload gepl)

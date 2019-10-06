@@ -22,6 +22,10 @@ public class LevelAsset : ScriptableObject
         public List<Vector3> aimPositions;
     }
 
+    public int organHealth = 1;
+
+    public int money = 1;
+
     /// <summary>
     /// La liste des entités du niveau
     /// </summary>

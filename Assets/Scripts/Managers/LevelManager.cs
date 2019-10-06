@@ -39,7 +39,7 @@ public static class LevelManager
         // On envoi les chemins possibles au manager de cartes
         MapManager.GeneratePaths(paths);
 
-        // Et on charge également les entités
+        // On charge également les entités
         MapManager.GenerateGameEntities(level.gameEntities.Select(_ => {
             GameEntity entity = null;
             if (_.entityAsset is TurretAsset asset)
@@ -50,6 +50,12 @@ public static class LevelManager
             }
             return entity;
         }).ToList());
+
+        // On setup la thune
+        ShopManager.Money = level.money;
+
+        // Ainsi que les points de vie de l'Organe
+        OrganManager.HP = level.organHealth;
     }
 
     /// <summary>

@@ -9,11 +9,6 @@ using UnityEngine.UI;
 public class ShopManager
 {
     /// <summary>
-    /// L'ensemble des unités disponibles à l'achat
-    /// </summary>
-    public static List<Unit> units = new List<Unit>();
-
-    /// <summary>
     /// Le montant disponible pour que le joueur achète des unités
     /// </summary>
     public static int money = 1000;
@@ -52,10 +47,6 @@ public class ShopManager
     /// </summary>
     public static Unit currentUnit = null;
 
-    /// <summary>
-    /// Le prix de l'escouade pour un nombre d'unité sélectionné
-    /// </summary>
-    private static int currentCost = 0;
 
     /// <summary>
     /// Le prix de l'escouade pour un nombre d'unité sélectionné
@@ -74,6 +65,11 @@ public class ShopManager
         }
     }
 
+    /// <summary>
+    /// Le prix de l'escouade pour un nombre d'unité sélectionné
+    /// </summary>
+    private static int currentCost = 0;
+
     public static int CurrentCost {
         get => currentCost;
 
@@ -84,6 +80,14 @@ public class ShopManager
                 {"Item", currentUnit.maname}
             });
         }
+    }
+
+    public static void Reset()
+    {
+        money = 0;
+        currentAmount = 0;
+        currentCost = 0;
+        currentPrice = 0;
     }
 
     /// <summary>
@@ -171,8 +175,7 @@ public class ShopManager
                 tmp.color = myImage.color;
             }
         }
-        
-
+    
         CurrentAmount = 0;
         CurrentPrice = currentUnit.initialPrice;
         CurrentCost = 0;
