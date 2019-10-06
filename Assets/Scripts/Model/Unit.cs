@@ -100,6 +100,11 @@ public class Unit
     /// </summary>
     public string maname;
 
+    /// <summary>
+    /// L'icone utilisée dans l'UI
+    /// </summary>
+    public Sprite icon;
+
     public Unit(Unit unit) {
         this.HP = unit.HP;
         this.Position = unit.Position;
@@ -109,6 +114,7 @@ public class Unit
         this.stepPrice = unit.stepPrice;
         this.priceFactor = unit.priceFactor;
         this.maname = unit.maname;
+        this.icon = unit.icon;
     }
 
     public Unit(UnitAsset unitAsset, Vector3 position)
@@ -121,5 +127,6 @@ public class Unit
         this.stepPrice = unitAsset.stepPrice;
         this.priceFactor = unitAsset.priceFactor;
         this.maname = unitAsset.maname;
+        this.icon = unitAsset.icon;
     }
 }
