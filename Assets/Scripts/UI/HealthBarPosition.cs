@@ -15,6 +15,7 @@ public class HealthBarPosition : MonoBehaviour
     void Awake()
     {
         instance = Instantiate(UnitNumber, FindObjectOfType<Canvas>().transform);
+        EventManager.OnNextLevel.AddListener(_ => Destroy(instance));
     }
 
     // Update is called once per frame

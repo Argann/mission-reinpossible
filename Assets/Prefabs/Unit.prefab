@@ -84,5 +84,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UnitNumber: {fileID: 397942675063952967, guid: 2fd1f8c33ffecc340bbf8d54a4961ec0,
     type: 3}
-  offset: {x: 1.35, y: -0.5, z: 0.8}
+  offset: {x: 0, y: 0, z: -0.75}
   instance: {fileID: 0}
