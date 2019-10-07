@@ -17,6 +17,8 @@ public class Squad : GameEntity
     /// </summary>
     public int value;
 
+    public Unit currentUnit;
+
     public override Vector3 Position
     {
         get => position;

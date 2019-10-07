@@ -12,7 +12,7 @@ public class LevelNumberVisualizer : MonoBehaviour
 
     void Awake() {
         text = GetComponent<Text>();
-        text.text = "" + ShopManager.Money;
+        text.text = "" + MainComponent.Instance.startLevel;
     }
 
     void OnEnable() {

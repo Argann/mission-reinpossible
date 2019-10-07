@@ -97,6 +97,7 @@ public class SquadManager
     /// <param name="squad">L'escouade subissant l'attaque</param>
     /// <param name="damage">Les dégâts répartis sur les unités</param>
     public static void DamageSquad(Squad squad, int damage) {
+        squad.currentUnit = squad.units[0];
         while (damage > 0 && squad.units.Count > 0){
             Unit unit = squad.units[0];
             damage -= DamageUnit(unit, damage);
@@ -124,6 +125,7 @@ public class SquadManager
     /// <param name="squad">L'escouade subissant l'attaque</param>
     /// <param name="damage">Les dégâts infligés à toutes les unités</param>
     public static void DamageSplashSquad(Squad squad, int damage) {
+        squad.currentUnit = squad.units[0];
         for(int i=squad.units.Count-1; i>-1; i--) {
             Unit unit = squad.units[i];
             DamageUnit(unit, damage);
