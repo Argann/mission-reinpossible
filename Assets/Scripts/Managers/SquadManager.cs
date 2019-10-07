@@ -179,6 +179,7 @@ public class SquadManager
     /// <returns>Les dégâts infligés par l'escouade</returns>
     public static int Kamikazee(Squad squad) {
         int result = 0;
+        squad.currentUnit = squad.units[0];
         foreach(Unit unit in squad.units) {
             result += unit.damage;
         }
