@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 /// <summary>
@@ -43,6 +44,10 @@ public class MainComponent : MonoBehaviour
 
     public GameObject TurretSuppobusier;
 
+    public GameObject VictoryUI;
+
+    public GameObject DamageUIPrefab;
+
     public GameObject Rein;
 
     [Header("Variables")]
@@ -63,12 +68,17 @@ public class MainComponent : MonoBehaviour
     {
         // Et on lance le tempo !
         TempoManager.StartBeat();
+        VictoryUI.transform.DOScale(0f,0f);
 
         startLevel--;
         NextGame();
 
         EventManager.OnSquadDeath.AddListener(CheckGameOver);
-        EventManager.OnOrganDeath.AddListener(NextGame);
+        EventManager.OnOrganDeath.AddListener(_ => {
+            NextGame(_);
+            VictoryUI.transform.DOScale(1f,1f);
+            StartCoroutine(DisappearAfterDelay());
+        });
 
         EventManager.OnTempoBeat.AddListener(_ => {
 
@@ -84,6 +94,12 @@ public class MainComponent : MonoBehaviour
         });
 
         ShopManager.InitializeShopManager();
+    }
+
+    IEnumerator DisappearAfterDelay() {
+        yield return new WaitForSeconds(2f);
+        VictoryUI.transform.DOScale(0f,1.5f);
+        VictoryUI.transform.DORotate(new Vector3(0,0,0), 1.5f, RotateMode.FastBeyond360);
     }
 
 
@@ -108,6 +124,7 @@ public class MainComponent : MonoBehaviour
 
         // Et on lance l'évènement de nouvelle vague
         EventManager.OnNextLevel.Invoke(new GameEventPayload());
+        EventManager.OnLevelLoaded.Invoke(new GameEventPayload());
     }
 
     public void ResetGame()

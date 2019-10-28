@@ -7,12 +7,12 @@ public static class OrganManager
         hp = 999;
     }
 
+
     public static int HP {
         get => hp;
         set {
             int oldValue = value;
             hp = value;
-
             EventManager.OnOrganHit.Invoke(new GameEventPayload(){
                 {"HitAmount", oldValue - hp}
             });

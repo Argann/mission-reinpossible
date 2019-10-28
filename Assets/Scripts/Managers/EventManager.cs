@@ -14,6 +14,11 @@ public static class EventManager
     public static GameEvent OnNextLevel = new GameEvent();
 
     /// <summary>
+    /// Evenement appelé lorsque le nouveau niveau a fini de charger
+    /// </summary>
+    public static GameEvent OnLevelLoaded = new GameEvent();
+
+    /// <summary>
     /// Evenement invoqué lorsqu'un battement de jeu
     /// survient.
     /// 
