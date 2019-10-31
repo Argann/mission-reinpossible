@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Level 6
   m_EditorClassIdentifier: 
   organHealth: 10
-  money: 70
+  money: 60
   gameEntities:
   - entityAsset: {fileID: 11400000, guid: 30aee7e06ebb0614a93acc3d3e1e6560, type: 2}
     startPosition: {x: -2, y: 0, z: 4}
     startRotation: {x: 0, y: 90, z: 0}
     aimPositions:
-    - {x: 1, y: 0, z: 3}
+    - {x: 1, y: 0, z: 2}
     - {x: 1, y: 0, z: 4}
-    - {x: 1, y: 0, z: 5}
+    - {x: 1, y: 0, z: 6}
   - entityAsset: {fileID: 11400000, guid: 6615bb1b052370648ad72a653095c716, type: 2}
     startPosition: {x: 3, y: 0, z: 8}
     startRotation: {x: 0, y: 90, z: 0}
